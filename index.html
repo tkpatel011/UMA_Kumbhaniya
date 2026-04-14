@@ -10,16 +10,12 @@
   <!-- EmailJS SDK for contact form auto-email -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // ⚠️ SETUP: Replace these with your real EmailJS credentials
-    // 1. Sign up free at https://emailjs.com
-    // 2. Create an Email Service → get YOUR_SERVICE_ID
-    // 3. Create an Email Template → get YOUR_TEMPLATE_ID
-    //    Template variables: {{from_name}}, {{from_phone}}, {{message}}, {{reply_to}}
-    // 4. Get your Public Key from Account → API Keys
-    (function(){
-      emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
-    })();
-  </script>
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init({
+      publicKey: "ovHgjAdItAZoxY40m"
+    });
+  });
+</script>
 </head>
 <body>
 
