@@ -187,10 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const row = document.createElement('div');
         row.className = 'modal-item';
         row.innerHTML = `
-          <div>
-            <div class="modal-item-name">${item.name}</div>
-            <div class="modal-item-desc">${item.desc}</div>
-          </div>
+          <div class="modal-item-name">${item.name}</div>
           <div class="modal-item-price">${item.price}</div>
         `;
         section.appendChild(row);
@@ -242,20 +239,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function generateMenuPDF() {
-    let rows = '';
+    // Build sections HTML
+    let sections = '';
     Object.entries(fullMenuData).forEach(([cat, items]) => {
-      rows += `
-        <tr class="cat-row"><td colspan="3"><b>— ${cat} —</b></td></tr>
-      `;
-      items.forEach((item, i) => {
-        rows += `
-          <tr class="${i % 2 === 0 ? 'even' : ''}">
-            <td>${item.name}</td>
-            <td>${item.desc}</td>
-            <td class="price">${item.price}</td>
-          </tr>
-        `;
+      const icon = { 'Snacks': '🌶', 'Meals': '🍛', 'Drinks': '🥛', 'Ice Cream': '🍦', 'Sweets': '🍮' }[cat] || '✦';
+      let itemRows = '';
+      items.forEach(item => {
+        itemRows += `
+          <div class="menu-row">
+            <div class="menu-row-left">
+              <span class="item-name">${item.name}</span>
+              <span class="item-desc">${item.desc}</span>
+            </div>
+            <div class="menu-row-dots"></div>
+            <span class="item-price">${item.price}</span>
+          </div>`;
       });
+      sections += `
+        <div class="menu-section-block">
+          <div class="section-head">
+            <span class="ornament">❧</span>
+            <h3>${icon}  ${cat}  ${icon}</h3>
+            <span class="ornament">❧</span>
+          </div>
+          ${itemRows}
+        </div>`;
     });
 
     return `
@@ -264,99 +272,354 @@ document.addEventListener('DOMContentLoaded', () => {
 <head>
   <meta charset="UTF-8">
   <title>UMA Kumbhaniya – Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700&display=swap');
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Nunito',sans-serif; background:#fff; color:#2E1B0E; padding:32px; }
-    .header { text-align:center; border-bottom:3px solid #D4A017; padding-bottom:16px; margin-bottom:24px; }
-    .header h1 { font-family:'Playfair Display',serif; font-size:2.6rem; color:#5C3D1E; }
-    .header h1 em { color:#D4A017; font-style:italic; }
-    .header p { color:#8B5E2F; font-size:0.9rem; margin-top:6px; }
-    .tagline { font-family:'Playfair Display',serif; font-style:italic; font-size:1rem; color:#D4A017; margin-bottom:4px; }
-    table { width:100%; border-collapse:collapse; font-size:0.88rem; }
-    .cat-row td { background:#FDF6EC; font-family:'Playfair Display',serif; font-size:1rem; color:#5C3D1E; padding:12px 10px 6px; letter-spacing:0.08em; border-top:2px solid #F7C948; }
-    tr td { padding:9px 10px; border-bottom:1px dashed #F5EAD6; vertical-align:top; }
-    tr.even td { background:#FFFBF3; }
-    td:first-child { font-weight:700; color:#5C3D1E; width:30%; }
-    td:nth-child(2) { color:#6B4C2A; width:52%; }
-    .price { font-family:'Playfair Display',serif; font-weight:700; color:#A07810; text-align:right; white-space:nowrap; width:18%; }
-    .footer { text-align:center; margin-top:28px; font-size:0.78rem; color:#8B5E2F; border-top:2px solid #F7C948; padding-top:12px; }
-    .info-row { display:flex; justify-content:center; gap:32px; margin:10px 0 0; font-size:0.82rem; }
-    @media print { body { padding:16px; } .header h1 { font-size:2rem; } }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #FFFDF7;
+      color: #2E1B0E;
+      padding: 0;
+    }
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 48px;
+      background: #FFFDF7;
+      border: 1px solid #e8d8b0;
+      position: relative;
+    }
+
+    /* Decorative corner borders */
+    .page-wrap::before, .page-wrap::after {
+      content: '';
+      position: absolute;
+      width: 60px; height: 60px;
+      border-color: #D4A017;
+      border-style: solid;
+      opacity: 0.6;
+    }
+    .page-wrap::before { top: 14px; left: 14px; border-width: 2px 0 0 2px; }
+    .page-wrap::after  { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; }
+    .corner-tr, .corner-bl {
+      position: absolute;
+      width: 60px; height: 60px;
+      border-color: #D4A017;
+      border-style: solid;
+      opacity: 0.6;
+    }
+    .corner-tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; }
+    .corner-bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
+
+    /* Header */
+    .menu-header {
+      text-align: center;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+    .top-ornament {
+      font-size: 1.1rem;
+      color: #D4A017;
+      letter-spacing: 0.4em;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .resto-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #5C3D1E;
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    .resto-name em {
+      display: block;
+      font-style: italic;
+      color: #D4A017;
+      font-size: 2.2rem;
+      margin-top: 4px;
+    }
+    .tagline-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #8B5E2F;
+      margin-top: 14px;
+      letter-spacing: 0.06em;
+    }
+    .header-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0 0;
+    }
+    .header-divider span { color: #D4A017; font-size: 1.1rem; flex-shrink: 0; }
+    .header-divider .line { flex: 1; height: 1.5px; background: linear-gradient(to right, transparent, #D4A017, transparent); }
+
+    /* Info bar */
+    .info-bar {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 0.78rem;
+      color: #8B5E2F;
+      margin-top: 14px;
+      letter-spacing: 0.04em;
+      flex-wrap: wrap;
+    }
+    .info-bar span { display: flex; align-items: center; gap: 5px; }
+
+    /* Menu sections */
+    .menu-section-block { margin-bottom: 28px; }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      margin-top: 4px;
+    }
+    .section-head h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #5C3D1E;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: #FDF6EC;
+      padding: 0 12px;
+    }
+    .section-head .ornament {
+      color: #D4A017;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .section-head::before, .section-head::after {
+      display: none;
+    }
+    /* Lines around the section title */
+    .section-head {
+      position: relative;
+    }
+    .section-head::before {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #D4A017 40%, #D4A017);
+    }
+    .section-head::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, transparent, #D4A017 40%, #D4A017);
+    }
+
+    /* Menu rows */
+    .menu-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 9px 0 7px;
+      border-bottom: 1px dotted rgba(212,160,23,0.35);
+    }
+    .menu-row:last-child { border-bottom: none; }
+    .menu-row-left {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+    .item-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: #2E1B0E;
+      line-height: 1.3;
+    }
+    .item-desc {
+      font-size: 0.75rem;
+      color: #8B5E2F;
+      font-style: italic;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+    .menu-row-dots {
+      flex: 0 0 auto;
+      width: 40px;
+      border-bottom: 1.5px dotted rgba(212,160,23,0.4);
+      margin-bottom: 5px;
+      align-self: flex-end;
+    }
+    .item-price {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #A07810;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .menu-footer {
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 16px;
+    }
+    .footer-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .footer-divider span { color: #D4A017; font-size: 1.1rem; flex-shrink: 0; }
+    .footer-divider .line { flex: 1; height: 1.5px; background: linear-gradient(to right, transparent, #D4A017, transparent); }
+    .footer-note {
+      font-size: 0.75rem;
+      color: #8B5E2F;
+      font-style: italic;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: #5C3D1E;
+      margin-top: 8px;
+      letter-spacing: 0.08em;
+    }
+
+    @media print {
+      body { background: white; }
+      .page-wrap { border: none; padding: 20px 32px; max-width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <div class="header">
-    <p class="tagline">✦ Authentic Flavours ✦</p>
-    <h1>UMA <em>Kumbhaniya</em></h1>
-    <p>Rajkot, Gujarat &nbsp;|&nbsp; Mon–Sat: 8AM–10PM &nbsp;|&nbsp; +91 98765 43210</p>
-  </div>
-  <table>
-    <thead>
-      <tr style="background:#F7C948;color:#5C3D1E;">
-        <th style="padding:10px;text-align:left;">Item</th>
-        <th style="padding:10px;text-align:left;">Description</th>
-        <th style="padding:10px;text-align:right;">Price</th>
-      </tr>
-    </thead>
-    <tbody>${rows}</tbody>
-  </table>
-  <div class="footer">
-    <div class="info-row">
-      <span>📍 Rajkot, Gujarat</span>
-      <span>📞 +91 98765 43210</span>
-      <span>🕐 Mon–Sat: 8AM–10PM</span>
+  <div class="page-wrap">
+    <div class="corner-tr"></div>
+    <div class="corner-bl"></div>
+
+    <div class="menu-header">
+      <span class="top-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+      <div class="resto-name">UMA <em>Kumbhaniya</em></div>
+      <div class="tagline-text">Where Every Bite Tells a Story of Tradition & Love</div>
+      <div class="header-divider">
+        <div class="line"></div>
+        <span>✦</span>
+        <div class="line"></div>
+      </div>
+      <div class="info-bar">
+        <span>📍 Rajkot, Gujarat</span>
+        <span>📞 +91 98765 43210</span>
+        <span>🕐 Mon–Sat: 8AM–10PM</span>
+        <span>☀ Sun: 9AM–9PM</span>
+      </div>
     </div>
-    <p style="margin-top:8px;">© 2025 UMA Kumbhaniya &nbsp;|&nbsp; All prices are inclusive of taxes &nbsp;|&nbsp; Subject to change without notice</p>
+
+    ${sections}
+
+    <div class="menu-footer">
+      <div class="footer-divider">
+        <div class="line"></div>
+        <span>❧</span>
+        <div class="line"></div>
+      </div>
+      <div class="footer-note">
+        All prices are inclusive of applicable taxes &nbsp;·&nbsp; Subject to seasonal availability<br>
+        Prices may change without prior notice
+      </div>
+      <div class="footer-brand">— UMA Kumbhaniya, Rajkot —</div>
+    </div>
   </div>
 </body>
 </html>`;
   }
 
   /* ──────────────────────────────────────────
-     CONTACT FORM VALIDATION
+     CONTACT FORM – VALIDATION + EMAILJS
+     EmailJS sends form details to your inbox automatically.
+     Setup: https://emailjs.com → free account → set IDs below.
   ────────────────────────────────────────── */
+
+  // ⚠️ Replace these three values with yours from emailjs.com
+  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz789'
+  // Public key is already set in index.html <head>
+
   const contactForm = document.getElementById('contactForm');
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let valid = true;
 
-    const name    = document.getElementById('name');
-    const phone   = document.getElementById('phone');
-    const message = document.getElementById('message');
+    const nameEl    = document.getElementById('name');
+    const phoneEl   = document.getElementById('phone');
+    const messageEl = document.getElementById('message');
 
-    // Reset errors
     clearError('name');
     clearError('phone');
     clearError('message');
 
-    if (!name.value.trim() || name.value.trim().length < 2) {
+    if (!nameEl.value.trim() || nameEl.value.trim().length < 2) {
       setError('name', 'Please enter your full name (min 2 characters)');
       valid = false;
     }
     const phoneRegex = /^[+]?[\d\s\-()]{7,15}$/;
-    if (!phone.value.trim() || !phoneRegex.test(phone.value.trim())) {
+    if (!phoneEl.value.trim() || !phoneRegex.test(phoneEl.value.trim())) {
       setError('phone', 'Please enter a valid phone number');
       valid = false;
     }
-    if (!message.value.trim() || message.value.trim().length < 10) {
+    if (!messageEl.value.trim() || messageEl.value.trim().length < 10) {
       setError('message', 'Please write a message (min 10 characters)');
       valid = false;
     }
 
-    if (valid) {
-      const btn = contactForm.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      setTimeout(() => {
-        contactForm.reset();
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        const success = document.getElementById('formSuccess');
-        success.classList.add('show');
-        setTimeout(() => success.classList.remove('show'), 5000);
-      }, 1200);
+    if (!valid) return;
+
+    const btn = contactForm.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    // EmailJS template parameters — must match your template variable names
+    const templateParams = {
+      from_name  : nameEl.value.trim(),
+      from_phone : phoneEl.value.trim(),
+      message    : messageEl.value.trim(),
+      to_name    : 'UMA Kumbhaniya',           // shown in email greeting
+      reply_to   : 'noreply@umakumbhaniya.com' // fallback reply address
+    };
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      contactForm.reset();
+      const success = document.getElementById('formSuccess');
+      success.classList.add('show');
+      setTimeout(() => success.classList.remove('show'), 6000);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      // Friendly fallback — show mailto link if EmailJS not configured yet
+      const isNotConfigured =
+        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ||
+        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID';
+
+      if (isNotConfigured) {
+        // Open mailto as fallback during development
+        const subject = encodeURIComponent('New Message from ' + nameEl.value.trim());
+        const body    = encodeURIComponent(
+          'Name: ' + nameEl.value.trim() + '\n' +
+          'Phone: ' + phoneEl.value.trim() + '\n\n' +
+          'Message:\n' + messageEl.value.trim()
+        );
+        window.location.href = `mailto:your@email.com?subject=${subject}&body=${body}`;
+      } else {
+        alert('Sorry, could not send message. Please call us directly or try again.');
+      }
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
     }
   });
 
@@ -394,16 +657,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function revealOnScroll() {
-    document.querySelectorAll('.reveal').forEach((el, i) => {
+    document.querySelectorAll('.reveal').forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        setTimeout(() => el.classList.add('visible'), i * 40);
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('visible');
       }
     });
   }
 
   addRevealClasses();
-  revealOnScroll(); // Run once on load
+  // Run immediately - no scroll needed for elements already in view
+  requestAnimationFrame(() => {
+    revealOnScroll();
+  });
 
   /* ──────────────────────────────────────────
      LAZY LOADING IMAGES (native + IntersectionObserver)
