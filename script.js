@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
      HAMBURGER MENU
   ────────────────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navLinks');
+  const navMenu = document.getElementById('navLinks');
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────────────────────────────────
      MENU TABS (Category Filter)
   ────────────────────────────────────────── */
-  const tabBtns   = document.querySelectorAll('.tab-btn');
+  const tabBtns = document.querySelectorAll('.tab-btn');
   const menuCards = document.querySelectorAll('.menu-card');
 
   tabBtns.forEach(btn => {
@@ -127,53 +127,53 @@ document.addEventListener('DOMContentLoaded', () => {
   ────────────────────────────────────────── */
   const fullMenuData = {
     'Snacks': [
-      { name: 'Samosa (2 pcs)',    desc: 'Crispy pastry filled with spiced potatoes & peas',          price: '₹20' },
-      { name: 'Kachori (2 pcs)',   desc: 'Deep-fried pockets filled with lentil stuffing',            price: '₹20' },
-      { name: 'Bhajiya Plate',     desc: 'Assorted fritters with green chutney',                     price: '₹30' },
-      { name: 'Dabeli',            desc: 'Spiced potato filling in buttered bun with chutneys',       price: '₹25' },
-      { name: 'Pani Puri (6 pcs)', desc: 'Crispy puris with tangy tamarind water',                   price: '₹30' },
-      { name: 'Sev Puri (4 pcs)',  desc: 'Flat puris topped with chutneys and sev',                  price: '₹30' },
-      { name: 'Ragda Pattice',     desc: 'Potato patty with white pea curry and toppings',           price: '₹45' },
-      { name: 'Vada Pav',          desc: 'Spiced potato dumpling in bun with dry garlic chutney',    price: '₹20' },
+      { name: 'Samosa (2 pcs)', desc: 'Crispy pastry filled with spiced potatoes & peas', price: '₹20' },
+      { name: 'Kachori (2 pcs)', desc: 'Deep-fried pockets filled with lentil stuffing', price: '₹20' },
+      { name: 'Bhajiya Plate', desc: 'Assorted fritters with green chutney', price: '₹30' },
+      { name: 'Dabeli', desc: 'Spiced potato filling in buttered bun with chutneys', price: '₹25' },
+      { name: 'Pani Puri (6 pcs)', desc: 'Crispy puris with tangy tamarind water', price: '₹30' },
+      { name: 'Sev Puri (4 pcs)', desc: 'Flat puris topped with chutneys and sev', price: '₹30' },
+      { name: 'Ragda Pattice', desc: 'Potato patty with white pea curry and toppings', price: '₹45' },
+      { name: 'Vada Pav', desc: 'Spiced potato dumpling in bun with dry garlic chutney', price: '₹20' },
     ],
     'Meals': [
-      { name: 'Gujarati Thali',  desc: 'Dal, sabzi, roti, rice, kadhi, papad, pickle & more',    price: '₹120' },
-      { name: 'Dal Khichdi',     desc: 'Comforting rice & lentil mix served with ghee',          price: '₹80'  },
-      { name: 'Pav Bhaji',       desc: 'Spiced vegetable mash with buttered pav',               price: '₹70'  },
-      { name: 'Chole Bhature',   desc: 'Spiced chickpea curry with fried bread',                price: '₹90'  },
-      { name: 'Kadhi Chawal',    desc: 'Yogurt-based curry with steamed rice',                  price: '₹70'  },
-      { name: 'Undhiyu',         desc: 'Traditional Gujarati winter vegetable medley',          price: '₹100' },
+      { name: 'Gujarati Thali', desc: 'Dal, sabzi, roti, rice, kadhi, papad, pickle & more', price: '₹120' },
+      { name: 'Dal Khichdi', desc: 'Comforting rice & lentil mix served with ghee', price: '₹80' },
+      { name: 'Pav Bhaji', desc: 'Spiced vegetable mash with buttered pav', price: '₹70' },
+      { name: 'Chole Bhature', desc: 'Spiced chickpea curry with fried bread', price: '₹90' },
+      { name: 'Kadhi Chawal', desc: 'Yogurt-based curry with steamed rice', price: '₹70' },
+      { name: 'Undhiyu', desc: 'Traditional Gujarati winter vegetable medley', price: '₹100' },
     ],
     'Drinks': [
-      { name: 'Masala Chaas',       desc: 'Spiced buttermilk with roasted cumin',              price: '₹25' },
-      { name: 'Mango Lassi',        desc: 'Thick yogurt mango blend with cardamom',            price: '₹50' },
-      { name: 'Sugarcane Juice',    desc: 'Fresh pressed with ginger & lemon',                 price: '₹30' },
-      { name: 'Rose Sharbat',       desc: 'Chilled rose syrup drink with basil seeds',         price: '₹30' },
-      { name: 'Thandai',            desc: 'Spiced milk drink with nuts and saffron',           price: '₹55' },
-      { name: 'Cold Coffee',        desc: 'Blended with milk and ice cream',                   price: '₹60' },
+      { name: 'Masala Chaas', desc: 'Spiced buttermilk with roasted cumin', price: '₹25' },
+      { name: 'Mango Lassi', desc: 'Thick yogurt mango blend with cardamom', price: '₹50' },
+      { name: 'Sugarcane Juice', desc: 'Fresh pressed with ginger & lemon', price: '₹30' },
+      { name: 'Rose Sharbat', desc: 'Chilled rose syrup drink with basil seeds', price: '₹30' },
+      { name: 'Thandai', desc: 'Spiced milk drink with nuts and saffron', price: '₹55' },
+      { name: 'Cold Coffee', desc: 'Blended with milk and ice cream', price: '₹60' },
     ],
     'Ice Cream': [
-      { name: 'Kulfi (Malai)',   desc: 'Traditional frozen dessert with saffron',              price: '₹40' },
-      { name: 'Falooda',         desc: 'Rose milk, basil seeds & vermicelli delight',          price: '₹60' },
-      { name: 'Ice Cream Soda',  desc: 'Chilled soda topped with creamy ice cream',           price: '₹45' },
-      { name: 'Cassata Slice',   desc: 'Layered multi-flavour ice cream classic',             price: '₹50' },
+      { name: 'Kulfi (Malai)', desc: 'Traditional frozen dessert with saffron', price: '₹40' },
+      { name: 'Falooda', desc: 'Rose milk, basil seeds & vermicelli delight', price: '₹60' },
+      { name: 'Ice Cream Soda', desc: 'Chilled soda topped with creamy ice cream', price: '₹45' },
+      { name: 'Cassata Slice', desc: 'Layered multi-flavour ice cream classic', price: '₹50' },
     ],
     'Sweets': [
-      { name: 'Gulab Jamun (2 pcs)', desc: 'Soft milk-solid balls in rose sugar syrup',       price: '₹30' },
-      { name: 'Jalebi (100g)',       desc: 'Crispy spiral sweets drenched in sugar syrup',    price: '₹40' },
-      { name: 'Shrikhand',           desc: 'Strained yogurt dessert with cardamom & saffron', price: '₹50' },
-      { name: 'Halwa',               desc: 'Semolina sweet with ghee, nuts and cardamom',     price: '₹45' },
-      { name: 'Kheer',               desc: 'Creamy rice pudding with saffron and pistachios', price: '₹55' },
-      { name: 'Mohanthal',           desc: 'Dense gram flour fudge – a Gujarati classic',     price: '₹60/100g' },
+      { name: 'Gulab Jamun (2 pcs)', desc: 'Soft milk-solid balls in rose sugar syrup', price: '₹30' },
+      { name: 'Jalebi (100g)', desc: 'Crispy spiral sweets drenched in sugar syrup', price: '₹40' },
+      { name: 'Shrikhand', desc: 'Strained yogurt dessert with cardamom & saffron', price: '₹50' },
+      { name: 'Halwa', desc: 'Semolina sweet with ghee, nuts and cardamom', price: '₹45' },
+      { name: 'Kheer', desc: 'Creamy rice pudding with saffron and pistachios', price: '₹55' },
+      { name: 'Mohanthal', desc: 'Dense gram flour fudge – a Gujarati classic', price: '₹60/100g' },
     ],
   };
 
   const categoryIcons = {
-    'Snacks':    'fas fa-pepper-hot',
-    'Meals':     'fas fa-bowl-food',
-    'Drinks':    'fas fa-glass-water',
+    'Snacks': 'fas fa-pepper-hot',
+    'Meals': 'fas fa-bowl-food',
+    'Drinks': 'fas fa-glass-water',
     'Ice Cream': 'fas fa-ice-cream',
-    'Sweets':    'fas fa-candy-cane',
+    'Sweets': 'fas fa-candy-cane',
   };
 
   function buildModal() {
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const menuModal  = document.getElementById('menuModal');
+  const menuModal = document.getElementById('menuModal');
   const closeModal = document.getElementById('closeModal');
 
   document.getElementById('viewFullMenu').addEventListener('click', () => {
@@ -539,24 +539,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ──────────────────────────────────────────
-     CONTACT FORM – VALIDATION + EMAILJS
-     EmailJS sends form details to your inbox automatically.
-     Setup: https://emailjs.com → free account → set IDs below.
-  ────────────────────────────────────────── */
+   CONTACT FORM – VALIDATION + EMAILJS
+────────────────────────────────────────── */
 
-  // ⚠️ Replace these three values with yours from emailjs.com
-  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz789'
-  // Public key is already set in index.html <head>
+  const EMAILJS_SERVICE_ID = 'service_ln8kean';
+  const EMAILJS_TEMPLATE_ID = 'template_kxdzbj4';
 
   const contactForm = document.getElementById('contactForm');
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     let valid = true;
 
-    const nameEl    = document.getElementById('name');
-    const phoneEl   = document.getElementById('phone');
+    const nameEl = document.getElementById('name');
+    const phoneEl = document.getElementById('phone');
     const messageEl = document.getElementById('message');
 
     clearError('name');
@@ -567,11 +564,13 @@ document.addEventListener('DOMContentLoaded', () => {
       setError('name', 'Please enter your full name (min 2 characters)');
       valid = false;
     }
+
     const phoneRegex = /^[+]?[\d\s\-()]{7,15}$/;
     if (!phoneEl.value.trim() || !phoneRegex.test(phoneEl.value.trim())) {
       setError('phone', 'Please enter a valid phone number');
       valid = false;
     }
+
     if (!messageEl.value.trim() || messageEl.value.trim().length < 10) {
       setError('message', 'Please write a message (min 10 characters)');
       valid = false;
@@ -583,40 +582,33 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    // EmailJS template parameters — must match your template variable names
+    // ✅ CORRECT TEMPLATE PARAMS
     const templateParams = {
-      from_name  : nameEl.value.trim(),
-      from_phone : phoneEl.value.trim(),
-      message    : messageEl.value.trim(),
-      to_name    : 'UMA Kumbhaniya',           // shown in email greeting
-      reply_to   : 'noreply@umakumbhaniya.com' // fallback reply address
+      from_name: nameEl.value.trim(),
+      from_phone: phoneEl.value.trim(),
+      message: messageEl.value.trim(),
+      to_name: 'UMA Kumbhaniya'
     };
 
     try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-      contactForm.reset();
-      const success = document.getElementById('formSuccess');
-      success.classList.add('show');
-      setTimeout(() => success.classList.remove('show'), 6000);
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      // Friendly fallback — show mailto link if EmailJS not configured yet
-      const isNotConfigured =
-        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ||
-        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID';
+      console.log("Sending...", templateParams);
 
-      if (isNotConfigured) {
-        // Open mailto as fallback during development
-        const subject = encodeURIComponent('New Message from ' + nameEl.value.trim());
-        const body    = encodeURIComponent(
-          'Name: ' + nameEl.value.trim() + '\n' +
-          'Phone: ' + phoneEl.value.trim() + '\n\n' +
-          'Message:\n' + messageEl.value.trim()
-        );
-        window.location.href = `mailto:your@email.com?subject=${subject}&body=${body}`;
-      } else {
-        alert('Sorry, could not send message. Please call us directly or try again.');
-      }
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+
+      console.log("SUCCESS:", response);
+
+      alert("✅ Message Sent Successfully!");
+
+      contactForm.reset();
+
+    } catch (err) {
+      console.error("ERROR:", err);
+
+      alert("❌ Error: " + (err.text || err.message));
     } finally {
       btn.disabled = false;
       btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
