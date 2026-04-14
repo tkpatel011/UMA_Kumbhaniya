@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UMA Kumbhaniya – Authentic Flavours</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-uma">UMA</span>
+        <span class="logo-sub">Kumbhaniya</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Welcome to</p>
+      <h1 class="hero-title">UMA<br /><em>Kumbhaniya</em></h1>
+      <p class="hero-tagline">Where Every Bite Tells a Story of Tradition & Love</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#contact" class="btn btn-outline">Visit Us</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Crafted with Heart,<br /><em>Served with Soul</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-img-placeholder">
+            <i class="fas fa-utensils"></i>
+            <span>Since 2022</span>
+          </div>
+          <div class="about-badge">
+            <span class="badge-num">3+</span>
+            <span class="badge-text">Years of Taste</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="about-intro">UMA Kumbhaniya is more than a restaurant — it's a celebration of authentic Gujarati and Indian flavours passed down through generations.</p>
+          <p class="about-body">Nestled in the heart of the community, we bring you the warmth of home-cooked food with the finesse of professional cooking. Every dish is crafted from fresh, locally-sourced ingredients, ensuring that every meal is a memorable experience.</p>
+          <div class="highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon"><i class="fas fa-leaf"></i></div>
+              <h4>Fresh Ingredients</h4>
+              <p>Locally sourced, daily fresh produce used in every preparation</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon"><i class="fas fa-heart"></i></div>
+              <h4>Made with Love</h4>
+              <p>Every recipe carries the warmth and tradition of home cooking</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon"><i class="fas fa-star"></i></div>
+              <h4>Quality Service</h4>
+              <p>We believe great food deserves equally great hospitality</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What We Serve</p>
+        <h2 class="section-title">Our Signature <em>Menu</em></h2>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="menu-tabs" id="menuTabs">
+        <!-- <button class="tab-btn active" data-cat="all">All</button> -->
+        <!-- <button class="tab-btn" data-cat="snacks">Snacks</button> -->
+        <!-- <button class="tab-btn" data-cat="meals">Meals</button> -->
+        <!-- <button class="tab-btn" data-cat="drinks">Drinks</button>
+        <button class="tab-btn" data-cat="icecream">Ice Cream</button>
+        <button class="tab-btn" data-cat="sweets">Sweets</button> -->
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Snacks -->
+        <div class="menu-card" data-cat="snacks">
+          <div class="menu-card-icon"><i class="fas fa-pepper-hot"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Snacks</span>
+            <h4>Samosa (2 pcs)</h4>
+            <p>Crispy pastry filled with spiced potatoes & peas</p>
+          </div>
+          <span class="menu-price">₹20</span>
+        </div>
+        <div class="menu-card" data-cat="snacks">
+          <div class="menu-card-icon"><i class="fas fa-bread-slice"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Snacks</span>
+            <h4>Kachori (2 pcs)</h4>
+            <p>Deep-fried pockets filled with lentil stuffing</p>
+          </div>
+          <span class="menu-price">₹20</span>
+        </div>
+        <div class="menu-card" data-cat="snacks">
+          <div class="menu-card-icon"><i class="fas fa-cookie-bite"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Snacks</span>
+            <h4>Bhajiya Plate</h4>
+            <p>Assorted fritters with green chutney</p>
+          </div>
+          <span class="menu-price">₹30</span>
+        </div>
+        <div class="menu-card" data-cat="snacks">
+          <div class="menu-card-icon"><i class="fas fa-fire"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Snacks</span>
+            <h4>Dabeli</h4>
+            <p>Spiced potato filling in buttered bun with chutneys</p>
+          </div>
+          <span class="menu-price">₹25</span>
+        </div>
+        <div class="menu-card" data-cat="snacks">
+          <div class="menu-card-icon"><i class="fas fa-circle"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Snacks</span>
+            <h4>Pani Puri (6 pcs)</h4>
+            <p>Crispy puris with tangy tamarind water</p>
+          </div>
+          <span class="menu-price">₹30</span>
+        </div>
+        <!-- Meals -->
+        <div class="menu-card" data-cat="meals">
+          <div class="menu-card-icon"><i class="fas fa-bowl-food"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Meals</span>
+            <h4>Gujarati Thali</h4>
+            <p>Dal, sabzi, roti, rice, kadhi & more</p>
+          </div>
+          <span class="menu-price">₹120</span>
+        </div>
+        <div class="menu-card" data-cat="meals">
+          <div class="menu-card-icon"><i class="fas fa-drumstick-bite"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Meals</span>
+            <h4>Dal Khichdi</h4>
+            <p>Comforting rice & lentil mix with ghee</p>
+          </div>
+          <span class="menu-price">₹80</span>
+        </div>
+        <div class="menu-card" data-cat="meals">
+          <div class="menu-card-icon"><i class="fas fa-egg"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Meals</span>
+            <h4>Pav Bhaji</h4>
+            <p>Spiced vegetable mash with buttered pav</p>
+          </div>
+          <span class="menu-price">₹70</span>
+        </div>
+        <!-- Drinks -->
+        <div class="menu-card" data-cat="drinks">
+          <div class="menu-card-icon"><i class="fas fa-glass-water"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Drinks</span>
+            <h4>Masala Chaas</h4>
+            <p>Spiced buttermilk with roasted cumin</p>
+          </div>
+          <span class="menu-price">₹25</span>
+        </div>
+        <div class="menu-card" data-cat="drinks">
+          <div class="menu-card-icon"><i class="fas fa-mug-hot"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Drinks</span>
+            <h4>Mango Lassi</h4>
+            <p>Thick yogurt mango blend with cardamom</p>
+          </div>
+          <span class="menu-price">₹50</span>
+        </div>
+        <div class="menu-card" data-cat="drinks">
+          <div class="menu-card-icon"><i class="fas fa-wine-glass"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Drinks</span>
+            <h4>Sugarcane Juice</h4>
+            <p>Fresh pressed with ginger & lemon</p>
+          </div>
+          <span class="menu-price">₹30</span>
+        </div>
+        <!-- Ice Cream -->
+        <div class="menu-card" data-cat="icecream">
+          <div class="menu-card-icon"><i class="fas fa-ice-cream"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Ice Cream</span>
+            <h4>Kulfi (Malai)</h4>
+            <p>Traditional frozen dessert with saffron</p>
+          </div>
+          <span class="menu-price">₹40</span>
+        </div>
+        <div class="menu-card" data-cat="icecream">
+          <div class="menu-card-icon"><i class="fas fa-ice-cream"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Ice Cream</span>
+            <h4>Falooda</h4>
+            <p>Rose milk, basil seeds & vermicelli delight</p>
+          </div>
+          <span class="menu-price">₹60</span>
+        </div>
+        <div class="menu-card" data-cat="icecream">
+          <div class="menu-card-icon"><i class="fas fa-snowflake"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Ice Cream</span>
+            <h4>Ice Cream Soda</h4>
+            <p>Chilled soda topped with creamy ice cream</p>
+          </div>
+          <span class="menu-price">₹45</span>
+        </div>
+        <!-- Sweets -->
+        <div class="menu-card" data-cat="sweets">
+          <div class="menu-card-icon"><i class="fas fa-candy-cane"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Sweets</span>
+            <h4>Gulab Jamun (2 pcs)</h4>
+            <p>Soft milk-solid balls in rose sugar syrup</p>
+          </div>
+          <span class="menu-price">₹30</span>
+        </div>
+        <div class="menu-card" data-cat="sweets">
+          <div class="menu-card-icon"><i class="fas fa-cake-candles"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Sweets</span>
+            <h4>Jalebi (100g)</h4>
+            <p>Crispy spiral sweets drenched in sugar syrup</p>
+          </div>
+          <span class="menu-price">₹40</span>
+        </div>
+        <div class="menu-card" data-cat="sweets">
+          <div class="menu-card-icon"><i class="fas fa-cookie"></i></div>
+          <div class="menu-card-info">
+            <span class="menu-cat-tag">Sweets</span>
+            <h4>Shrikhand</h4>
+            <p>Strained yogurt dessert with cardamom & saffron</p>
+          </div>
+          <span class="menu-price">₹50</span>
+        </div>
+      </div>
+
+      <div class="menu-actions">
+        <button class="btn btn-primary" id="viewFullMenu">
+          <i class="fas fa-list"></i> View Full Menu
+        </button>
+        <button class="btn btn-outline" id="downloadMenu">
+          <i class="fas fa-download"></i> Download Menu PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL MENU MODAL ===== -->
+  <div class="modal-overlay" id="menuModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Complete Menu</h3>
+        <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="modalMenuContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <!-- <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Moments & Memories</p>
+        <h2 class="section-title">A Feast for <em>Your Eyes</em></h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gi-1">
+          <div class="gallery-placeholder"><i class="fas fa-drumstick-bite"></i><span>Thali</span></div>
+          <div class="gallery-hover"><span>Gujarati Thali</span></div>
+        </div>
+        <div class="gallery-item gi-2">
+          <div class="gallery-placeholder"><i class="fas fa-ice-cream"></i><span>Desserts</span></div>
+          <div class="gallery-hover"><span>Sweet Delights</span></div>
+        </div>
+        <div class="gallery-item gi-3">
+          <div class="gallery-placeholder"><i class="fas fa-pepper-hot"></i><span>Snacks</span></div>
+          <div class="gallery-hover"><span>Street Snacks</span></div>
+        </div>
+        <div class="gallery-item gi-4">
+          <div class="gallery-placeholder"><i class="fas fa-mug-hot"></i><span>Beverages</span></div>
+          <div class="gallery-hover"><span>Fresh Drinks</span></div>
+        </div>
+        <div class="gallery-item gi-5">
+          <div class="gallery-placeholder"><i class="fas fa-store"></i><span>Restaurant</span></div>
+          <div class="gallery-hover"><span>Our Space</span></div>
+        </div>
+        <div class="gallery-item gi-6">
+          <div class="gallery-placeholder"><i class="fas fa-users"></i><span>Team</span></div>
+          <div class="gallery-hover"><span>With Love</span></div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Get in <em>Touch</em></h2>
+      </div>
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="contact-form-wrap">
+          <h3>Send a Message</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" />
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
+              <span class="form-error" id="phoneError"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Thank you! We'll get back to you soon.
+            </div>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="contact-info-wrap">
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4>Address</h4>
+                <p>UMA Kumbhaniya,<br />Rajkot, Gujarat, India</p>
+                <a href="https://share.google/b7FRXB55yZA1rSwgN" target="_blank" class="info-link">
+                  <i class="fas fa-directions"></i> Get Directions
+                </a>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Mon – Sat: 8:00 AM – 10:00 PM</p>
+                <p>Sunday: 9:00 AM – 9:00 PM</p>
+              </div>
+            </div>
+            <div class="info-card review-card">
+              <div class="info-icon"><i class="fab fa-google"></i></div>
+              <div>
+                <h4>Google Reviews</h4>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  <span>4.5 / 5</span>
+                </div>
+                <a href="https://search.google.com/local/writereview?placeid=ChIJ" target="_blank" class="btn btn-google">
+                  <i class="fab fa-google"></i> Review Us on Google
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-wrap">
+        <h3 class="map-title">Our Location</h3>
+        <div class="map-container">
+          <iframe
+            src="https://maps.google.com/maps?q=Rajkot,Gujarat,India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="380"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="UMA Kumbhaniya Location">
+          </iframe>
+        </div>
+        <div class="map-btn-wrap">
+          <a href="https://share.google/b7FRXB55yZA1rSwgN" target="_blank" class="btn btn-primary">
+            <i class="fas fa-map"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-uma">UMA</span>
+          <span class="logo-sub">Kumbhaniya</span>
+        </div>
+        <p>Where every bite tells a story of tradition and love. Serving authentic flavours since 2010.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Rajkot, Gujarat, India</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
+        <p><i class="fas fa-clock"></i> Mon–Sat: 8AM – 10PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 UMA Kumbhaniya. All Rights Reserved. | Designed with <i class="fas fa-heart"></i></p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
