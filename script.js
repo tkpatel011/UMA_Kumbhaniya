@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────────────────────────────────
      NAVBAR: Sticky scroll effect & active link
   ────────────────────────────────────────── */
-  const navbar   = document.getElementById('navbar');
+  const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
   const scrollBtn = document.getElementById('scrollTop');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────────────────────────────────
      MENU TABS (Category Filter)
   ────────────────────────────────────────── */
-  const tabBtns   = document.querySelectorAll('.tab-btn');
+  const tabBtns = document.querySelectorAll('.tab-btn');
   const menuCards = document.querySelectorAll('.menu-card');
 
   tabBtns.forEach(btn => {
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
           requestAnimationFrame(() => {
             setTimeout(() => {
               card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-              card.style.opacity    = '1';
-              card.style.transform  = 'translateY(0)';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
             }, 30);
           });
         } else {
@@ -90,54 +90,49 @@ document.addEventListener('DOMContentLoaded', () => {
      FULL MENU DATA
   ────────────────────────────────────────── */
   const fullMenuData = {
-    'Snacks': [
-      { name: 'Samosa (2 pcs)',   desc: 'Crispy pastry filled with spiced potatoes & peas',         price: '₹20' },
-      { name: 'Kachori (2 pcs)',  desc: 'Deep-fried pockets filled with lentil stuffing',           price: '₹20' },
-      { name: 'Bhajiya Plate',    desc: 'Assorted fritters with green chutney',                     price: '₹30' },
-      { name: 'Dabeli',           desc: 'Spiced potato filling in buttered bun with chutneys',      price: '₹25' },
-      { name: 'Pani Puri (6 pcs)',desc: 'Crispy puris with tangy tamarind water',                   price: '₹30' },
-      { name: 'Sev Puri (4 pcs)', desc: 'Flat puris topped with chutneys and sev',                  price: '₹30' },
-      { name: 'Ragda Pattice',    desc: 'Potato patty with white pea curry and toppings',           price: '₹45' },
-      { name: 'Vada Pav',         desc: 'Spiced potato dumpling in bun with dry garlic chutney',    price: '₹20' },
-    ],
-    'Meals': [
-      { name: 'Gujarati Thali',   desc: 'Dal, sabzi, roti, rice, kadhi, papad, pickle & more',     price: '₹120' },
-      { name: 'Dal Khichdi',      desc: 'Comforting rice & lentil mix served with ghee',            price: '₹80'  },
-      { name: 'Pav Bhaji',        desc: 'Spiced vegetable mash with buttered pav',                  price: '₹70'  },
-      { name: 'Chole Bhature',    desc: 'Spiced chickpea curry with fried bread',                   price: '₹90'  },
-      { name: 'Kadhi Chawal',     desc: 'Yogurt-based curry with steamed rice',                     price: '₹70'  },
-      { name: 'Undhiyu',          desc: 'Traditional Gujarati winter vegetable medley',             price: '₹100' },
-    ],
-    'Drinks': [
-      { name: 'Masala Chaas',     desc: 'Spiced buttermilk with roasted cumin',                    price: '₹25' },
-      { name: 'Mango Lassi',      desc: 'Thick yogurt mango blend with cardamom',                  price: '₹50' },
-      { name: 'Sugarcane Juice',  desc: 'Fresh pressed with ginger & lemon',                       price: '₹30' },
-      { name: 'Rose Sharbat',     desc: 'Chilled rose syrup drink with basil seeds',               price: '₹30' },
-      { name: 'Thandai',          desc: 'Spiced milk drink with nuts and saffron',                 price: '₹55' },
-      { name: 'Cold Coffee',      desc: 'Blended with milk and ice cream',                         price: '₹60' },
+    'ભજીયા': [
+      { name: 'કુંભણીયા (100 gm)', desc: 'Traditional Gujarati spiced fritter', price: '₹40' },
+      { name: 'પટ્ટી મરચા (100 gm)', desc: 'Crispy stuffed chilli strips', price: '₹40' },
+      { name: 'ભરેલા મરચા (100 gm)', desc: 'Stuffed chilli fritters', price: '₹40' },
+      { name: 'મેથીના ભજીયા (100 gm)', desc: 'Fenugreek leaf pakoras', price: '₹40' },
+      { name: 'બટેટા પતરી (100 gm)', desc: 'Thin potato slice fritters', price: '₹40' },
+      { name: 'ફ્રેન્ચ ફ્રાય (100 gm)', desc: 'Crispy golden French fries', price: '₹40' },
     ],
     'Ice Cream': [
-      { name: 'Kulfi (Malai)',    desc: 'Traditional frozen dessert with saffron',                 price: '₹40' },
-      { name: 'Falooda',          desc: 'Rose milk, basil seeds & vermicelli delight',             price: '₹60' },
-      { name: 'Ice Cream Soda',   desc: 'Chilled soda topped with creamy ice cream',              price: '₹45' },
-      { name: 'Cassata Slice',    desc: 'Layered multi-flavour ice cream classic',                 price: '₹50' },
+      { name: 'સ્પે. ગોટાળો (scoop / 1 kg)', desc: 'Special mixed ice cream delight', price: '₹30 / ₹270' },
+      { name: 'માવા બદામ (scoop / 1 kg)', desc: 'Rich mawa almond ice cream', price: '₹30 / ₹260' },
+      { name: 'પાઈનેપલ (scoop / 1 kg)', desc: 'Refreshing pineapple flavour', price: '₹35 / ₹340' },
+      { name: 'અમેરિકન ડ્રાયફ્રુટ (scoop / 1 kg)', desc: 'Loaded with premium dry fruits', price: '₹35 / ₹340' },
+      { name: 'ઉમા સ્પેશ્યલ (scoop / 1 kg)', desc: 'Our house special creation', price: '₹40 / ₹380' },
+      { name: 'ચોકલેટ (scoop / 1 kg)', desc: 'Rich chocolate ice cream', price: '₹35 / ₹380' },
+      { name: 'સીતાફળ (scoop / 1 kg)', desc: 'Custard apple flavour – seasonal favourite', price: '₹40 / ₹380' },
     ],
-    'Sweets': [
-      { name: 'Gulab Jamun (2 pcs)', desc: 'Soft milk-solid balls in rose sugar syrup',           price: '₹30'     },
-      { name: 'Jalebi (100g)',        desc: 'Crispy spiral sweets drenched in sugar syrup',        price: '₹40'     },
-      { name: 'Shrikhand',            desc: 'Strained yogurt dessert with cardamom & saffron',    price: '₹50'     },
-      { name: 'Halwa',                desc: 'Semolina sweet with ghee, nuts and cardamom',        price: '₹45'     },
-      { name: 'Kheer',                desc: 'Creamy rice pudding with saffron and pistachios',    price: '₹55'     },
-      { name: 'Mohanthal',            desc: 'Dense gram flour fudge – a Gujarati classic',        price: '₹60/100g'},
+    'Candy': [
+      { name: 'માવા મલાઈ', desc: 'Creamy mawa candy bar', price: '₹25' },
+      { name: 'માવા ટોપરા', desc: 'Mawa coconut candy bar', price: '₹25' },
+      { name: 'જાંબુ', desc: 'Jamun flavoured candy', price: '₹30' },
+      { name: 'ઓરીયો', desc: 'Oreo flavoured candy bar', price: '₹30' },
+      { name: 'સ્ટ્રોબેરી', desc: 'Strawberry flavoured candy', price: '₹30' },
+      { name: 'અમુલ ફ્રોસ્ટિક', desc: 'Classic Amul frostik bar', price: '₹35' },
+      { name: 'રાસબરી', desc: 'Raspberry flavoured candy', price: '₹15' },
+      { name: 'ચોકલેટ કોન', desc: 'Chocolate cone candy', price: '₹15' },
+    ],
+    'Drinks': [
+      { name: 'થમ્સઅપ', desc: 'Classic cola drink', price: '₹20' },
+      { name: 'Sprite', desc: 'Refreshing lemon-lime soda', price: '₹20' },
+      { name: 'માઝા', desc: 'Mango flavoured drink', price: '₹20' },
+      { name: 'જીરા મસાલા', desc: 'Spiced cumin soda', price: '₹20' },
+      { name: 'ઓરેન્જ', desc: 'Orange flavoured drink', price: '₹20' },
+      { name: 'સોસીયો', desc: 'Gujarat\'s favourite soda', price: '₹20' },
+      { name: 'છાસ', desc: 'Traditional spiced buttermilk', price: '₹20' },
     ],
   };
 
   const categoryIcons = {
-    'Snacks':   'fas fa-pepper-hot',
-    'Meals':    'fas fa-bowl-food',
-    'Drinks':   'fas fa-glass-water',
-    'Ice Cream':'fas fa-ice-cream',
-    'Sweets':   'fas fa-candy-cane',
+    'ભજીયા': 'fas fa-pepper-hot',
+    'Ice Cream': 'fas fa-ice-cream',
+    'Candy': 'fas fa-candy-cane',
+    'Drinks': 'fas fa-glass-water',
   };
 
   /* ──────────────────────────────────────────
@@ -164,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const menuModal  = document.getElementById('menuModal');
+  const menuModal = document.getElementById('menuModal');
   const closeModal = document.getElementById('closeModal');
 
   document.getElementById('viewFullMenu').addEventListener('click', () => {
@@ -194,11 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
      every device without popup permission.
   ────────────────────────────────────────── */
   document.getElementById('downloadMenu').addEventListener('click', () => {
-    const html  = generateMenuHTML();
-    const blob  = new Blob([html], { type: 'text/html;charset=utf-8' });
-    const url   = URL.createObjectURL(blob);
-    const link  = document.createElement('a');
-    link.href     = url;
+    const html = generateMenuHTML();
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
     link.download = 'UMA-Kumbhaniya-Menu.html';
     document.body.appendChild(link);
     link.click();
@@ -209,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function generateMenuHTML() {
     let sectionsHTML = '';
     Object.entries(fullMenuData).forEach(([cat, items]) => {
-      const icon = { 'Snacks': '🌶', 'Meals': '🍛', 'Drinks': '🥛', 'Ice Cream': '🍦', 'Sweets': '🍮' }[cat] || '✦';
+      const icon = { 'ભજીયા': '🌶', 'Ice Cream': '🍦', 'Candy': '🍬', 'Drinks': '🥤' }[cat] || '✦';
       let rows = '';
       items.forEach(item => {
         rows += `
@@ -338,14 +333,14 @@ document.addEventListener('DOMContentLoaded', () => {
      Sends directly via EmailJS – no mail app
      is opened on any device.
   ────────────────────────────────────────── */
-  const EMAILJS_SERVICE_ID  = 'service_ln8kean';
+  const EMAILJS_SERVICE_ID = 'service_ln8kean';
   const EMAILJS_TEMPLATE_ID = 'template_kxdzbj4';
 
-  const nameEl     = document.getElementById('name');
-  const phoneEl    = document.getElementById('phone');
-  const messageEl  = document.getElementById('message');
+  const nameEl = document.getElementById('name');
+  const phoneEl = document.getElementById('phone');
+  const messageEl = document.getElementById('message');
   const formSuccess = document.getElementById('formSuccess');
-  const sendBtn    = document.getElementById('sendMsgBtn');
+  const sendBtn = document.getElementById('sendMsgBtn');
 
   /* Block any accidental Enter-key form submission */
   document.getElementById('contactForm').addEventListener('submit', e => e.preventDefault());
@@ -382,24 +377,24 @@ document.addEventListener('DOMContentLoaded', () => {
     sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
     const templateParams = {
-      from_name:  nameEl.value.trim(),
+      from_name: nameEl.value.trim(),
       from_phone: phoneEl.value.trim(),
-      message:    messageEl.value.trim(),
-      to_name:    'UMA Kumbhaniya',
+      message: messageEl.value.trim(),
+      to_name: 'UMA Kumbhaniya',
     };
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
       formSuccess.classList.add('show');
-      nameEl.value    = '';
-      phoneEl.value   = '';
+      nameEl.value = '';
+      phoneEl.value = '';
       messageEl.value = '';
       setTimeout(() => formSuccess.classList.remove('show'), 5000);
     } catch (err) {
       console.error('EmailJS error:', err);
-      formSuccess.style.background   = '#fdecea';
-      formSuccess.style.borderColor  = '#ef9a9a';
-      formSuccess.style.color        = '#c62828';
+      formSuccess.style.background = '#fdecea';
+      formSuccess.style.borderColor = '#ef9a9a';
+      formSuccess.style.color = '#c62828';
       formSuccess.innerHTML = '<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again or call us directly.';
       formSuccess.classList.add('show');
       setTimeout(() => {
@@ -455,12 +450,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────────────────────────────────
      GALLERY: Entrance animation on scroll
   ────────────────────────────────────────── */
-  const galleryItems    = document.querySelectorAll('.gallery-item');
+  const galleryItems = document.querySelectorAll('.gallery-item');
   const galleryObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
         setTimeout(() => {
-          entry.target.style.opacity   = '1';
+          entry.target.style.opacity = '1';
           entry.target.style.transform = 'scale(1)';
         }, i * 80);
         galleryObserver.unobserve(entry.target);
@@ -469,8 +464,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
 
   galleryItems.forEach(item => {
-    item.style.opacity    = '0';
-    item.style.transform  = 'scale(0.92)';
+    item.style.opacity = '0';
+    item.style.transform = 'scale(0.92)';
     item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     galleryObserver.observe(item);
   });
