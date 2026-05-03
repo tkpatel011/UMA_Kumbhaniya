@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
   /* ──────────────────────────────────────────
      NAVBAR: Sticky scroll effect & active link
   ────────────────────────────────────────── */
@@ -56,37 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ──────────────────────────────────────────
-     MENU TABS (Category Filter)
-  ────────────────────────────────────────── */
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const menuCards = document.querySelectorAll('.menu-card');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cat = btn.dataset.cat;
-      menuCards.forEach(card => {
-        if (cat === 'all' || card.dataset.cat === cat) {
-          card.classList.remove('hidden');
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(16px)';
-          requestAnimationFrame(() => {
-            setTimeout(() => {
-              card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, 30);
-          });
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  /* ──────────────────────────────────────────
      FULL MENU DATA
   ────────────────────────────────────────── */
   const fullMenuData = {
@@ -136,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* ──────────────────────────────────────────
-     FULL MENU MODAL – View Full Menu button
+     FULL MENU MODAL
   ────────────────────────────────────────── */
   function buildModal() {
     const container = document.getElementById('modalMenuContent');
@@ -150,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         row.className = 'modal-item';
         row.innerHTML = `
           <div class="modal-item-name">${item.name}<br>
-            <span style="font-size:0.78rem;color:#8B5E3C;font-weight:400;">${item.desc}</span>
+            <span style="font-size:0.78rem;color:var(--text-light);font-weight:400;">${item.desc}</span>
           </div>
           <div class="modal-item-price">${item.price}</div>`;
         section.appendChild(row);
@@ -184,22 +154,66 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ──────────────────────────────────────────
-     DOWNLOAD MENU
-     Uses Blob + <a download> so it works on
-     every device without popup permission.
+     DOWNLOAD MENU AS PDF
   ────────────────────────────────────────── */
-  document.getElementById('downloadMenu').addEventListener('click', () => {
-    const html = generateMenuHTML();
-    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'UMA-Kumbhaniya-Menu.html';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+  document.getElementById('downloadMenu').addEventListener('click', async () => {
+    const btn = document.getElementById('downloadMenu');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+
+    try {
+      if (!window.html2canvas) {
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+      }
+      if (!window.jspdf) {
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+      }
+
+      const html = generateMenuHTML();
+      const iframe = document.createElement('iframe');
+      iframe.style.cssText = 'position:fixed;top:-10000px;left:-10000px;width:680px;height:auto;border:none;';
+      document.body.appendChild(iframe);
+      iframe.contentDocument.open();
+      iframe.contentDocument.write(html);
+      iframe.contentDocument.close();
+
+      await new Promise(r => setTimeout(r, 1500));
+
+      const pageWrap = iframe.contentDocument.querySelector('.page-wrap');
+      const canvas = await html2canvas(pageWrap, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#FAF6EF',
+        logging: false,
+      });
+
+      document.body.removeChild(iframe);
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      const { jsPDF } = window.jspdf;
+      const pdfW = 210;
+      const pdfH = (canvas.height * pdfW) / canvas.width;
+      const pdf = new jsPDF({ unit: 'mm', format: [pdfW, pdfH] });
+      pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
+      pdf.save('UMA-Kumbhaniya-Menu.pdf');
+    } catch (err) {
+      console.error('PDF generation error:', err);
+      alert('Could not generate PDF. Please try again.');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-download"></i> Download Menu';
+    }
   });
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
 
   function generateMenuHTML() {
     let sectionsHTML = '';
@@ -232,26 +246,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UMA Kumbhaniya – Menu</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'DM Sans', sans-serif; background: #FAF6EF; color: #2A1508; }
-    .page-wrap {
-      max-width: 680px; margin: 0 auto; padding: 40px 48px;
-      background: #FAF6EF; border: 1px solid #e8d0a0; position: relative;
-    }
-    .page-wrap::before, .page-wrap::after {
-      content: ''; position: absolute; width: 60px; height: 60px;
-      border-color: #E8932A; border-style: solid; opacity: 0.6;
-    }
+    .page-wrap { max-width: 680px; margin: 0 auto; padding: 40px 48px; background: #FAF6EF; border: 1px solid #e8d0a0; position: relative; }
+    .page-wrap::before, .page-wrap::after { content: ''; position: absolute; width: 60px; height: 60px; border-color: #E8932A; border-style: solid; opacity: 0.6; }
     .page-wrap::before { top: 14px; left: 14px; border-width: 2px 0 0 2px; }
     .page-wrap::after  { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; }
-    .corner-tr, .corner-bl {
-      position: absolute; width: 60px; height: 60px;
-      border-color: #E8932A; border-style: solid; opacity: 0.6;
-    }
+    .corner-tr, .corner-bl { position: absolute; width: 60px; height: 60px; border-color: #E8932A; border-style: solid; opacity: 0.6; }
     .corner-tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; }
     .corner-bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
     .menu-header { text-align: center; padding-bottom: 24px; margin-bottom: 24px; }
@@ -265,20 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .info-bar { display: flex; justify-content: center; gap: 24px; font-size: 0.78rem; color: #8B5E3C; margin-top: 14px; letter-spacing: 0.04em; flex-wrap: wrap; }
     .menu-section-block { margin-bottom: 28px; }
     .section-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; margin-top: 4px; }
-    .section-head h3 {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700;
-      color: #6B2D0E; letter-spacing: 0.12em; text-transform: uppercase;
-      white-space: nowrap; background: #FAF6EF; padding: 0 12px;
-    }
+    .section-head h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: #6B2D0E; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; background: #FAF6EF; padding: 0 12px; }
     .section-head .ornament { color: #E8932A; font-size: 1rem; flex-shrink: 0; }
-    .section-head::before {
-      content: ''; display: block; flex: 1; height: 1px;
-      background: linear-gradient(to right, transparent, #E8932A 40%, #E8932A);
-    }
-    .section-head::after {
-      content: ''; display: block; flex: 1; height: 1px;
-      background: linear-gradient(to left, transparent, #E8932A 40%, #E8932A);
-    }
+    .section-head::before { content: ''; display: block; flex: 1; height: 1px; background: linear-gradient(to right, transparent, #E8932A 40%, #E8932A); }
+    .section-head::after  { content: ''; display: block; flex: 1; height: 1px; background: linear-gradient(to left, transparent, #E8932A 40%, #E8932A); }
     .menu-row { display: flex; align-items: baseline; gap: 8px; padding: 9px 0 7px; border-bottom: 1px dotted rgba(232,147,42,0.35); }
     .menu-row:last-child { border-bottom: none; }
     .menu-row-left { display: flex; flex-direction: column; min-width: 0; flex: 1; }
@@ -292,10 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .footer-divider .line { flex: 1; height: 1.5px; background: linear-gradient(to right, transparent, #E8932A, transparent); }
     .footer-note { font-size: 0.75rem; color: #8B5E3C; font-style: italic; line-height: 1.8; }
     .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: #6B2D0E; margin-top: 8px; letter-spacing: 0.08em; }
-    @media print {
-      body { background: white; }
-      .page-wrap { border: none; padding: 20px 32px; max-width: 100%; }
-    }
   </style>
 </head>
 <body>
@@ -308,10 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="tagline-text">Where Every Bite Tells a Story of Tradition &amp; Love</div>
       <div class="header-divider"><div class="line"></div><span>✦</span><div class="line"></div></div>
       <div class="info-bar">
-        <span>📍 Rajkot, Gujarat</span>
-        <span>📞 +91 98765 43210</span>
-        <span>🕐 Mon–Sat: 8AM–10PM</span>
-        <span>☀ Sun: 9AM–9PM</span>
+        <span>📍 Babra, Gujarat</span>
+        <span>📞 +91 90991 28700</span>
+        <span>🕐 All Days: 4:00 PM – 11:45 PM</span>
       </div>
     </div>
     ${sectionsHTML}
@@ -321,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         All prices are inclusive of applicable taxes &nbsp;·&nbsp; Subject to seasonal availability<br>
         Prices may change without prior notice
       </div>
-      <div class="footer-brand">— UMA Kumbhaniya, Rajkot —</div>
+      <div class="footer-brand">— Uma Kumbhaniya - Babra —</div>
     </div>
   </div>
 </body>
@@ -330,8 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ──────────────────────────────────────────
      CONTACT FORM – EMAILJS
-     Sends directly via EmailJS – no mail app
-     is opened on any device.
   ────────────────────────────────────────── */
   const EMAILJS_SERVICE_ID = 'service_ln8kean';
   const EMAILJS_TEMPLATE_ID = 'template_kxdzbj4';
@@ -342,7 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSuccess = document.getElementById('formSuccess');
   const sendBtn = document.getElementById('sendMsgBtn');
 
-  /* Block any accidental Enter-key form submission */
   document.getElementById('contactForm').addEventListener('submit', e => e.preventDefault());
 
   sendBtn.addEventListener('click', async () => {
@@ -428,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function addRevealClasses() {
     const targets = [
       '.about-grid', '.highlight-card', '.menu-card',
-      '.gallery-item', '.info-card', '.contact-form-wrap',
+      '.info-card', '.contact-form-wrap',
       '.section-header', '.map-wrap',
     ];
     targets.forEach(sel => {
@@ -446,28 +432,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addRevealClasses();
   requestAnimationFrame(() => revealOnScroll());
-
-  /* ──────────────────────────────────────────
-     GALLERY: Entrance animation on scroll
-  ────────────────────────────────────────── */
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const galleryObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'scale(1)';
-        }, i * 80);
-        galleryObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  galleryItems.forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'scale(0.92)';
-    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    galleryObserver.observe(item);
-  });
 
 });
