@@ -1,23 +1,11 @@
-/* ============================================================
-   UMA KUMBHANIYA – SCRIPT.JS
-   ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
-  /* ──────────────────────────────────────────
-     NAVBAR: Sticky scroll effect & active link
-  ────────────────────────────────────────── */
-  const navbar = document.getElementById('navbar');
+    const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
   const scrollBtn = document.getElementById('scrollTop');
-
   window.addEventListener('scroll', () => {
-    /* Scrolled shadow */
     navbar.classList.toggle('scrolled', window.scrollY > 50);
-
-    /* Active nav link */
     let current = '';
     sections.forEach(sec => {
       if (window.scrollY >= sec.offsetTop - 90) {
@@ -27,18 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === '#' + current);
     });
-
-    /* Scroll-to-top button */
     scrollBtn.classList.toggle('visible', window.scrollY > 400);
-
-    /* Reveal animations */
     revealOnScroll();
   });
-
-  /* ──────────────────────────────────────────
-     SMOOTH SCROLL
-  ────────────────────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
@@ -48,67 +28,51 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  /* ──────────────────────────────────────────
-     SCROLL TO TOP
-  ────────────────────────────────────────── */
-  scrollBtn.addEventListener('click', () => {
+    scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
-  /* ──────────────────────────────────────────
-     FULL MENU DATA
-  ────────────────────────────────────────── */
-  const fullMenuData = {
+    const fullMenuData = {
     'ભજીયા': [
-      { name: 'કુંભણીયા (100 gm)', desc: 'Traditional Gujarati spiced fritter', price: '₹40' },
-      { name: 'પટ્ટી મરચા (100 gm)', desc: 'Crispy stuffed chilli strips', price: '₹40' },
-      { name: 'ભરેલા મરચા (100 gm)', desc: 'Stuffed chilli fritters', price: '₹40' },
-      { name: 'મેથીના ભજીયા (100 gm)', desc: 'Fenugreek leaf pakoras', price: '₹40' },
-      { name: 'બટેટા પતરી (100 gm)', desc: 'Thin potato slice fritters', price: '₹40' },
-      { name: 'ફ્રેન્ચ ફ્રાય (100 gm)', desc: 'Crispy golden French fries', price: '₹40' },
+      { name: 'કુંભણીયા (100 gm)', desc: '', price: '₹50' },
+      { name: 'પટ્ટી મરચા (100 gm)', desc: '', price: '₹50' },
+      { name: 'ભરેલા મરચા (100 gm)', desc: '', price: '₹50' },
+      { name: 'મેથીના ભજીયા (100 gm)', desc: '', price: '₹50' },
+      { name: 'બટેટા પતરી (100 gm)', desc: '', price: '₹50' },
+      { name: 'ફ્રેન્ચ ફ્રાય (100 gm)', desc: '', price: '₹50' }
     ],
     'Ice Cream': [
-      { name: 'સ્પે. ગોટાળો (scoop / 1 kg)', desc: 'Special mixed ice cream delight', price: '₹30 / ₹270' },
-      { name: 'માવા બદામ (scoop / 1 kg)', desc: 'Rich mawa almond ice cream', price: '₹30 / ₹260' },
-      { name: 'પાઈનેપલ (scoop / 1 kg)', desc: 'Refreshing pineapple flavour', price: '₹35 / ₹340' },
-      { name: 'અમેરિકન ડ્રાયફ્રુટ (scoop / 1 kg)', desc: 'Loaded with premium dry fruits', price: '₹35 / ₹340' },
-      { name: 'ઉમા સ્પેશ્યલ (scoop / 1 kg)', desc: 'Our house special creation', price: '₹40 / ₹380' },
-      { name: 'ચોકલેટ (scoop / 1 kg)', desc: 'Rich chocolate ice cream', price: '₹35 / ₹380' },
-      { name: 'સીતાફળ (scoop / 1 kg)', desc: 'Custard apple flavour – seasonal favourite', price: '₹40 / ₹380' },
-    ],
-    'Candy': [
-      { name: 'માવા મલાઈ', desc: 'Creamy mawa candy bar', price: '₹25' },
-      { name: 'માવા ટોપરા', desc: 'Mawa coconut candy bar', price: '₹25' },
-      { name: 'જાંબુ', desc: 'Jamun flavoured candy', price: '₹30' },
-      { name: 'ઓરીયો', desc: 'Oreo flavoured candy bar', price: '₹30' },
-      { name: 'સ્ટ્રોબેરી', desc: 'Strawberry flavoured candy', price: '₹30' },
-      { name: 'અમુલ ફ્રોસ્ટિક', desc: 'Classic Amul frostik bar', price: '₹35' },
-      { name: 'રાસબરી', desc: 'Raspberry flavoured candy', price: '₹15' },
-      { name: 'ચોકલેટ કોન', desc: 'Chocolate cone candy', price: '₹15' },
+      { name: 'સ્પે. ગોટાળો (scoop/1 kg)', desc: '', price: '₹30/₹290' },
+      { name: 'સ્પે. મલાઈ (scoop/1 kg)', desc: '', price: '₹30/₹290' },
+      { name: 'માવા બદામ (scoop/1 kg)', desc: '', price: '₹30/₹290' },
+      { name: 'પાઈનેપલ (scoop/1 kg)', desc: '', price: '₹35/₹350' },
+      { name: 'અમેરિકન ડ્રાયફ્રુટ (scoop/1 kg)', desc: '', price: '₹35/₹350' },
+      { name: 'ઉમા સ્પેશ્યલ (scoop/1 kg)', desc: '', price: '₹40/₹400' },
+      { name: 'ચોકલેટ (scoop/1 kg)', desc: '', price: '₹30/₹300' },
+      { name: 'સીતાફળ (scoop/1 kg)', desc: '', price: '₹40/₹400' },
+      { name: 'માવા મલાઈ (candy)', desc: '', price: '₹25' },
+      { name: 'માવા ટોપરા (candy)', desc: '', price: '₹30' },
+      { name: 'જાંબુ (candy)', desc: '', price: '₹35' },
+      { name: 'ઓરીયો (candy)', desc: '', price: '₹30' },
+      { name: 'સ્ટ્રોબેરી (candy)', desc: '', price: '₹30' },
+      { name: 'અમુલ ફ્રોસ્ટિક (candy)', desc: '', price: '₹35' },
+      { name: 'રાસબરી (candy)', desc: '', price: '₹15' },
+      { name: 'ચોકલેટ કોન', desc: '', price: '₹20' }
     ],
     'Drinks': [
-      { name: 'થમ્સઅપ', desc: 'Classic cola drink', price: '₹20' },
-      { name: 'Sprite', desc: 'Refreshing lemon-lime soda', price: '₹20' },
-      { name: 'માઝા', desc: 'Mango flavoured drink', price: '₹20' },
-      { name: 'જીરા મસાલા', desc: 'Spiced cumin soda', price: '₹20' },
-      { name: 'ઓરેન્જ', desc: 'Orange flavoured drink', price: '₹20' },
-      { name: 'સોસીયો', desc: 'Gujarat\'s favourite soda', price: '₹20' },
-      { name: 'છાસ', desc: 'Traditional spiced buttermilk', price: '₹20' },
-    ],
+      { name: 'થમ્સઅપ', desc: '', price: '₹20' },
+      { name: 'સ્પ્રાઈટ', desc: '', price: '₹20' },
+      { name: 'માઝા', desc: '', price: '₹20' },
+      { name: 'સોસીયો', desc: '', price: '₹20' },
+      { name: 'છાસ', desc: '', price: '₹20' }
+    ]
   };
-
   const categoryIcons = {
     'ભજીયા': 'fas fa-pepper-hot',
     'Ice Cream': 'fas fa-ice-cream',
     'Candy': 'fas fa-candy-cane',
     'Drinks': 'fas fa-glass-water',
   };
-
-  /* ──────────────────────────────────────────
-     FULL MENU MODAL
-  ────────────────────────────────────────── */
-  function buildModal() {
+    function buildModal() {
     const container = document.getElementById('modalMenuContent');
     container.innerHTML = '';
     Object.entries(fullMenuData).forEach(([cat, items]) => {
@@ -128,39 +92,40 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(section);
     });
   }
-
   const menuModal = document.getElementById('menuModal');
   const closeModal = document.getElementById('closeModal');
-
   document.getElementById('viewFullMenu').addEventListener('click', () => {
     buildModal();
     menuModal.classList.add('open');
     document.body.style.overflow = 'hidden';
   });
-
   closeModal.addEventListener('click', closeMenuModal);
-
   menuModal.addEventListener('click', (e) => {
     if (e.target === menuModal) closeMenuModal();
   });
-
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenuModal();
   });
-
   function closeMenuModal() {
     menuModal.classList.remove('open');
     document.body.style.overflow = '';
   }
-
-  /* ──────────────────────────────────────────
-     DOWNLOAD MENU AS PDF
-  ────────────────────────────────────────── */
-  document.getElementById('downloadMenu').addEventListener('click', async () => {
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+  if (viewMoreBtn) {
+    viewMoreBtn.addEventListener('click', () => {
+      const hiddenCards = document.querySelectorAll('.menu-card.hidden');
+      for (let i = 0; i < 6 && i < hiddenCards.length; i++) {
+        hiddenCards[i].classList.remove('hidden');
+      }
+      if (document.querySelectorAll('.menu-card.hidden').length === 0) {
+        viewMoreBtn.style.display = 'none';
+      }
+    });
+  }
+    document.getElementById('downloadMenu').addEventListener('click', async () => {
     const btn = document.getElementById('downloadMenu');
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-
     try {
       if (!window.html2canvas) {
         await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
@@ -168,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!window.jspdf) {
         await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
       }
-
       const html = generateMenuHTML();
       const iframe = document.createElement('iframe');
       iframe.style.cssText = 'position:fixed;top:-10000px;left:-10000px;width:680px;height:auto;border:none;';
@@ -176,9 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       iframe.contentDocument.open();
       iframe.contentDocument.write(html);
       iframe.contentDocument.close();
-
       await new Promise(r => setTimeout(r, 1500));
-
       const pageWrap = iframe.contentDocument.querySelector('.page-wrap');
       const canvas = await html2canvas(pageWrap, {
         scale: 2,
@@ -186,9 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundColor: '#FAF6EF',
         logging: false,
       });
-
       document.body.removeChild(iframe);
-
       const imgData = canvas.toDataURL('image/jpeg', 0.95);
       const { jsPDF } = window.jspdf;
       const pdfW = 210;
@@ -204,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.innerHTML = '<i class="fas fa-download"></i> Download Menu';
     }
   });
-
   function loadScript(src) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -214,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.head.appendChild(s);
     });
   }
-
   function generateMenuHTML() {
     let sectionsHTML = '';
     Object.entries(fullMenuData).forEach(([cat, items]) => {
@@ -241,13 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
           ${rows}
         </div>`;
     });
-
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>UMA Kumbhaniya – Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'DM Sans', sans-serif; background: #FAF6EF; color: #2A1508; }
@@ -260,26 +217,26 @@ document.addEventListener('DOMContentLoaded', () => {
     .corner-bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
     .menu-header { text-align: center; padding-bottom: 24px; margin-bottom: 24px; }
     .top-ornament { font-size: 1.1rem; color: #E8932A; letter-spacing: 0.4em; display: block; margin-bottom: 12px; }
-    .resto-name { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: #6B2D0E; line-height: 1; letter-spacing: 0.04em; }
-    .resto-name em { display: block; font-style: italic; color: #C0522B; font-size: 2.2rem; margin-top: 4px; }
-    .tagline-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: #8B5E3C; margin-top: 14px; letter-spacing: 0.06em; }
+    .resto-name { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: #6B2D0E; line-height: 1; letter-spacing: 0.04em; }
+    .resto-name em { display: block; font-style: italic; color: #C0522B; font-size: 2.6rem; margin-top: 4px; }
+    .tagline-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: #8B5E3C; margin-top: 14px; letter-spacing: 0.06em; }
     .header-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0 0; }
     .header-divider span { color: #E8932A; font-size: 1.1rem; flex-shrink: 0; }
     .header-divider .line { flex: 1; height: 1.5px; background: linear-gradient(to right, transparent, #E8932A, transparent); }
     .info-bar { display: flex; justify-content: center; gap: 24px; font-size: 0.78rem; color: #8B5E3C; margin-top: 14px; letter-spacing: 0.04em; flex-wrap: wrap; }
     .menu-section-block { margin-bottom: 28px; }
     .section-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; margin-top: 4px; }
-    .section-head h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: #6B2D0E; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; background: #FAF6EF; padding: 0 12px; }
-    .section-head .ornament { color: #E8932A; font-size: 1rem; flex-shrink: 0; }
+    .section-head h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: #6B2D0E; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; background: #FAF6EF; padding: 0 12px; }
+    .section-head .ornament { color: #E8932A; font-size: 0.8rem; flex-shrink: 0; }
     .section-head::before { content: ''; display: block; flex: 1; height: 1px; background: linear-gradient(to right, transparent, #E8932A 40%, #E8932A); }
     .section-head::after  { content: ''; display: block; flex: 1; height: 1px; background: linear-gradient(to left, transparent, #E8932A 40%, #E8932A); }
     .menu-row { display: flex; align-items: baseline; gap: 8px; padding: 9px 0 7px; border-bottom: 1px dotted rgba(232,147,42,0.35); }
     .menu-row:last-child { border-bottom: none; }
     .menu-row-left { display: flex; flex-direction: column; min-width: 0; flex: 1; }
-    .item-name { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 0.97rem; color: #2A1508; line-height: 1.3; }
-    .item-desc { font-size: 0.75rem; color: #8B5E3C; font-style: italic; margin-top: 2px; line-height: 1.4; }
-    .menu-row-dots { flex: 0 0 auto; width: 40px; border-bottom: 1.5px dotted rgba(232,147,42,0.4); margin-bottom: 5px; align-self: flex-end; }
-    .item-price { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1rem; color: #C0522B; white-space: nowrap; flex-shrink: 0; }
+    .item-name { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 0.75rem; color: #2A1508; line-height: 1.3; }
+    .item-desc { font-size: 0.6rem; color: #5C3018; font-style: italic; margin-top: 4px; line-height: 1.4; }
+    .menu-row-dots { flex: 0 0 auto; width: 40px; border-bottom: 2px dotted rgba(232,147,42,0.5); margin-bottom: 5px; align-self: flex-end; }
+    .item-price { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.75rem; color: #8B3518; white-space: nowrap; flex-shrink: 0; }
     .menu-footer { text-align: center; margin-top: 28px; padding-top: 16px; }
     .footer-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
     .footer-divider span { color: #E8932A; font-size: 1.1rem; flex-shrink: 0; }
@@ -316,21 +273,14 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 </html>`;
   }
-
-  /* ──────────────────────────────────────────
-     CONTACT FORM – EMAILJS
-  ────────────────────────────────────────── */
-  const EMAILJS_SERVICE_ID = 'service_ln8kean';
+    const EMAILJS_SERVICE_ID = 'service_ln8kean';
   const EMAILJS_TEMPLATE_ID = 'template_kxdzbj4';
-
   const nameEl = document.getElementById('name');
   const phoneEl = document.getElementById('phone');
   const messageEl = document.getElementById('message');
   const formSuccess = document.getElementById('formSuccess');
   const sendBtn = document.getElementById('sendMsgBtn');
-
   document.getElementById('contactForm').addEventListener('submit', e => e.preventDefault());
-
   sendBtn.addEventListener('click', async () => {
     clearError('name');
     clearError('phone');
@@ -338,37 +288,30 @@ document.addEventListener('DOMContentLoaded', () => {
     formSuccess.classList.remove('show');
     formSuccess.removeAttribute('style');
     formSuccess.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! We\'ll get back to you soon.';
-
     let valid = true;
-
     if (!nameEl.value.trim() || nameEl.value.trim().length < 2) {
       setError('name', 'Please enter your full name (min 2 characters)');
       valid = false;
     }
-
-    const phoneRegex = /^[+]?[\d\s\-()\u0020]{7,15}$/;
-    if (!phoneEl.value.trim() || !phoneRegex.test(phoneEl.value.trim())) {
-      setError('phone', 'Please enter a valid phone number');
+    const phoneVal = phoneEl.value.trim().replace(/[\s-]/g, '');
+    const phoneRegex = /^(?:\+91|91)?[6789]\d{9}$/;
+    if (!phoneVal || !phoneRegex.test(phoneVal)) {
+      setError('phone', 'Please enter a valid 10-digit phone number');
       valid = false;
     }
-
     if (!messageEl.value.trim() || messageEl.value.trim().length < 10) {
       setError('message', 'Please write a message (min 10 characters)');
       valid = false;
     }
-
     if (!valid) return;
-
     sendBtn.disabled = true;
     sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
     const templateParams = {
       from_name: nameEl.value.trim(),
       from_phone: phoneEl.value.trim(),
       message: messageEl.value.trim(),
       to_name: 'UMA Kumbhaniya',
     };
-
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
       formSuccess.classList.add('show');
@@ -393,25 +336,18 @@ document.addEventListener('DOMContentLoaded', () => {
       sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
     }
   });
-
   function setError(fieldId, msg) {
     document.getElementById(fieldId).classList.add('error');
     document.getElementById(fieldId + 'Error').textContent = msg;
   }
-
   function clearError(fieldId) {
     document.getElementById(fieldId).classList.remove('error');
     document.getElementById(fieldId + 'Error').textContent = '';
   }
-
   ['name', 'phone', 'message'].forEach(id => {
     document.getElementById(id).addEventListener('input', () => clearError(id));
   });
-
-  /* ──────────────────────────────────────────
-     SCROLL REVEAL ANIMATIONS
-  ────────────────────────────────────────── */
-  function addRevealClasses() {
+    function addRevealClasses() {
     const targets = [
       '.about-grid', '.highlight-card', '.menu-card',
       '.info-card', '.contact-form-wrap',
@@ -421,7 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
     });
   }
-
   function revealOnScroll() {
     document.querySelectorAll('.reveal').forEach(el => {
       if (el.getBoundingClientRect().top < window.innerHeight - 60) {
@@ -429,8 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
   addRevealClasses();
   requestAnimationFrame(() => revealOnScroll());
-
 });
