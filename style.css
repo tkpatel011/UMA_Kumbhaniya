@@ -203,8 +203,10 @@ ul {
   height: 56px;
   width: 56px;
   object-fit: cover;
-  border-radius: 50%;
+  clip-path: circle(48%);
   display: block;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
   transition: transform var(--transition);
 }
 .logo-img:hover {
