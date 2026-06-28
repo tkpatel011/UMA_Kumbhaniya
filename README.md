@@ -8,9 +8,7 @@ Uma Kumbhaniya is a clothing and saree-based business that offers traditional an
 
 ## ✨ Features
 
-* 🛍️ Wide variety of sarees and traditional wear
 * 📍 Shop information and location
-* 🖼️ Image gallery of products
 * 📄 Downloadable menu/catalog
 * 📱 Fully responsive website (mobile + desktop friendly)
 
