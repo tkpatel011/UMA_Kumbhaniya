@@ -1,0 +1,17 @@
+{
+  "name": "uma-kumbhaniya-website",
+  "version": "2.0.0",
+  "description": "UMA Kumbhaniya Restaurant Website & AI Closed-Domain Concierge Agent",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node -e \"const { search_menu, get_contact_info } = require('./server/tools'); console.log('Menu count:', search_menu().count); console.log('Contact:', get_contact_info().phone);\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "sharp": "^0.35.3"
+  }
+}

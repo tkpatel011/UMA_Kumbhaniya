@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UMA Kumbhaniya | Premium Gujarati Restaurant in Babra</title>
+    <meta name="description" content="Welcome to UMA Kumbhaniya. Where every bite tells a story of tradition & love. Experience authentic Gujarati cuisine in Babra, Gujarat." />
+    <meta name="keywords" content="UMA Kumbhaniya, Kumbhaniya, Babra Restaurant, Gujarati Cuisine, Authentic Gujarati Food, Traditional Restaurant" />
+    <meta property="og:title" content="UMA Kumbhaniya | Authentic Gujarati Restaurant" />
+    <meta property="og:description" content="Where every bite tells a story of tradition & love. Experience authentic Gujarati cuisine in Babra, Gujarat." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.umakumbhaniya.com" />
+    <meta property="og:image" content="https://www.umakumbhaniya.com/favicon.png" />
+    <meta property="og:site_name" content="UMA Kumbhaniya &amp; Ice Cream" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UMA Kumbhaniya &amp; Ice Cream — Babra" />
+    <meta name="twitter:description" content="Where every bite tells a story of Saurashtra tradition &amp; love. 100% Pure Veg in Babra, Gujarat." />
+    <meta name="twitter:image" content="https://www.umakumbhaniya.com/favicon.png" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.umakumbhaniya.com" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Schema.org Structured Data for Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "UMA Kumbhaniya & Ice Cream",
+      "image": "https://www.umakumbhaniya.com/favicon.png",
+      "@id": "https://www.umakumbhaniya.com/#restaurant",
+      "url": "https://www.umakumbhaniya.com",
+      "telephone": "+919099128700",
+      "priceRange": "₹",
+      "servesCuisine": ["Gujarati", "Kumbhaniya Bhajiya", "Ice Cream"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Babra",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 21.8421255,
+        "longitude": 71.2986685
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "16:00",
+        "closes": "23:45"
+      }
+    }
+    </script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Noto Sans Gujarati, Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init({ publicKey: "ovHgjAdItAZoxY40m" });
+        });
+    </script>
+</head>
+<body>
+    <!-- Subtle Grain Texture Overlay -->
+    <div class="bg-grain"></div>
+
+    <!-- Top Reading / Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+    <!-- Professional Luxury Custom Cursor System -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" data-cursor="UMA">
+                <img src="favicon.png" alt="UMA Kumbhaniya Logo" class="logo-img" loading="lazy" />
+                <div class="logo-text">
+                    <span class="logo-title">UMA</span>
+                    <span class="logo-sub">Kumbhaniya</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active" data-i18n="navHome">Home</a>
+                <a href="#story-section" class="nav-link" data-i18n="navOfferings">Offerings</a>
+                <a href="#menu" class="nav-link" data-i18n="navMenu">Menu</a>
+                <a href="#plan-visit" class="nav-link" data-i18n="navVisit">Visit</a>
+                <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
+                <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
+            </nav>
+
+            <div class="nav-right">
+                <!-- Share Website Button -->
+                <button class="btn-share-nav" id="navShareBtn" aria-label="Share Website" title="Share Website / વેબસાઇટ શેર કરો">
+                    <i class="fas fa-share-nodes"></i>
+                </button>
+
+                <!-- Language Switcher Toggle -->
+                <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language / ભાષા બદલો">
+                    <span class="lang-opt active" id="langOptEng">ENG</span>
+                    <span class="lang-sep">|</span>
+                    <span class="lang-opt" id="langOptGuj">ગુજરાતી</span>
+                </button>
+
+                <!-- Smart Live Status Indicator in Nav -->
+                <div class="nav-status-indicator" id="navStatusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="navStatusText">Open Now</span>
+                </div>
+
+                <a href="#menu" class="btn btn-nav-cta btn-primary magnetic-btn" data-cursor="MENU" data-i18n="navCta">
+                    <i class="fas fa-utensils"></i> Explore Menu
+                </a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Slide-out Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <div class="nav-logo">
+                    <img src="favicon.png" alt="UMA Kumbhaniya Logo" class="logo-img" loading="lazy" />
+                    <span class="logo-title" style="font-size:1.05rem;">UMA</span>
+                </div>
+                <div class="drawer-header-actions" style="display:flex; align-items:center; gap:8px; margin-left:auto;">
+                    <button class="lang-toggle-btn" id="mobileLangToggleBtn" aria-label="Switch Language">
+                        <span class="lang-opt active" id="mobileLangOptEng">ENG</span>
+                        <span class="lang-sep">|</span>
+                        <span class="lang-opt" id="mobileLangOptGuj">ગુજરાતી</span>
+                    </button>
+                    <button class="drawer-close" id="drawerClose" aria-label="Close Navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="drawer-body">
+                <nav class="drawer-nav">
+                    <a href="#home" class="drawer-link active"><i class="fas fa-home"></i> Home</a>
+                    <a href="#story-section" class="drawer-link"><i class="fas fa-star"></i> Offerings</a>
+                    <a href="#menu" class="drawer-link"><i class="fas fa-book-open"></i> Menu</a>
+                    <a href="#plan-visit" class="drawer-link"><i class="fas fa-map-marked-alt"></i> Plan Visit</a>
+                    <a href="#contact" class="drawer-link"><i class="fas fa-map-marker-alt"></i> Contact</a>
+                    <a href="#gallery" class="drawer-link"><i class="fas fa-images"></i> Gallery</a>
+                    <button class="btn btn-outline btn-full" id="drawerShareBtn" style="margin-top: 10px; width: 100%;" data-i18n="btnShareNav">
+                        <i class="fas fa-share-nodes"></i> Share Website
+                    </button>
+                </nav>
+                <div class="drawer-divider"></div>
+                <div class="drawer-info">
+                    <p><i class="fas fa-clock"></i> All Days: 04:00 PM – 11:45 PM</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+919099128700">+91 90991 28700</a></p>
+                </div>
+                <div class="drawer-socials">
+                    <a href="https://www.facebook.com/share/1H9vQ5yid8/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/uma_kumbhaniya/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/919099128700" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <!-- Smart Open/Closed Status Badge -->
+            <div class="hero-status-wrap reveal-item">
+                <span class="hero-status-pill" id="heroLiveStatus">
+                    <i class="fas fa-circle status-pulse-dot"></i>
+                    <span id="heroStatusLabel" data-i18n="heroStatus">Checking Open Hours...</span>
+                </span>
+            </div>
+            
+            <div class="hero-badge reveal-item">
+                <span class="badge-sparkle">✦</span>
+                <span data-i18n="heroSub">An Experience Worth Tasting</span>
+                <span class="badge-sparkle">✦</span>
+            </div>
+            
+            <h1 class="hero-title reveal-item">
+                <span class="title-word">UMA</span><br />
+                <em class="title-accent">Kumbhaniya</em>
+            </h1>
+            
+            <p class="hero-tagline reveal-item" data-i18n="heroTagline">Where Every Bite Tells a Story of Tradition &amp; Love</p>
+            
+            <div class="hero-highlights-strip reveal-item">
+                <div class="strip-item"><i class="fas fa-star"></i> <span>4.5 / 5 Rating</span></div>
+                <div class="strip-divider">•</div>
+                <div class="strip-item"><i class="fas fa-leaf"></i> <span>100% Fresh Daily</span></div>
+                <div class="strip-divider">•</div>
+                <div class="strip-item"><i class="fas fa-location-dot"></i> <span>Babra, Gujarat</span></div>
+            </div>
+
+            <div class="hero-btns reveal-item">
+                <a href="#menu" class="btn btn-primary btn-hero-glow magnetic-btn" data-cursor="EXPLORE" data-i18n="heroCtaMenu">
+                    <i class="fas fa-utensils"></i> Explore Menu
+                </a>
+                <a href="#contact" class="btn btn-outline magnetic-btn" data-cursor="VISIT" data-i18n="heroCtaVisit">
+                    <i class="fas fa-compass"></i> Visit Us
+                </a>
+                <button class="btn btn-concierge-trigger magnetic-btn" id="heroConciergeBtn" data-cursor="ASK AI" data-i18n="heroCtaAi">
+                    <i class="fas fa-sparkles"></i> Ask TasteAI
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Quick Actions Strip -->
+    <div class="quick-actions-bar reveal-item">
+        <div class="container quick-actions-container">
+            <a href="tel:+919099128700" class="quick-action-item spotlight-card" data-cursor="CALL">
+                <div class="qa-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="qa-text">
+                    <strong data-i18n="qaCall">Call Directly</strong>
+                    <span>+91 90991 28700</span>
+                </div>
+            </a>
+            <a href="#plan-visit" class="quick-action-item spotlight-card" data-cursor="HOURS">
+                <div class="qa-icon"><i class="fas fa-clock"></i></div>
+                <div class="qa-text">
+                    <strong data-i18n="qaHours">Opening Hours</strong>
+                    <span>4:00 PM – 11:45 PM</span>
+                </div>
+            </a>
+            <a href="https://www.google.com/maps/place/UMA+KUMBHANIYA+%26+ICE+CREAM/@21.8421255,71.2960936,17z/data=!3m1!4b1!4m6!3m5!1s0x39588de116bab375:0xb6ddb731a70b093f!8m2!3d21.8421255!4d71.2986685!16s%2Fg%2F11sk5rn5jy?entry=ttu" target="_blank" rel="noopener noreferrer" class="quick-action-item spotlight-card" data-cursor="DIRECTIONS">
+                <div class="qa-icon"><i class="fas fa-location-arrow"></i></div>
+                <div class="qa-text">
+                    <strong data-i18n="qaDirections">Get Directions</strong>
+                    <span>Babra, Gujarat</span>
+                </div>
+            </a>
+            <a href="https://www.google.com/maps/place//@21.8421255,71.2986685,17z/data=!3m1!4b1!4m3!3m2!1s0x39588de116bab375:0xb6ddb731a70b093f!12e1?entry=ttu" target="_blank" rel="noopener noreferrer" class="quick-action-item spotlight-card" data-cursor="REVIEW">
+                <div class="qa-icon"><i class="fab fa-google"></i></div>
+                <div class="qa-text">
+                    <strong data-i18n="qaReview">Google Reviews</strong>
+                    <span data-i18n="qaReviewSub">Rate &amp; Review Us</span>
+                </div>
+            </a>
+            <button class="quick-action-item spotlight-card" id="quickShareBtn" data-cursor="SHARE" style="background:none; border:none; text-align:left; cursor:pointer; width:100%;">
+                <div class="qa-icon"><i class="fas fa-share-nodes"></i></div>
+                <div class="qa-text">
+                    <strong data-i18n="qaShare">Share Website</strong>
+                    <span data-i18n="qaShareSub">WhatsApp &amp; Socials</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Signature Luxury Editorial Quote Section -->
+    <section class="editorial-quote-section">
+        <div class="container">
+            <div class="editorial-quote-banner reveal-item">
+                <div class="quote-symbol">“</div>
+                <blockquote class="quote-text" data-i18n="quoteText">
+                    Hot snacks, cool treats, and warm smiles — where every bite brings you back for more.
+                </blockquote>
+                <cite class="quote-author" data-i18n="quoteAuthor">✦ The Legacy of UMA Kumbhaniya • Babra ✦</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Scroll Story Section -->
+    <section class="section story-scroll-section" id="story-section">
+        <div class="container">
+            <div class="section-header reveal-item">
+                <p class="section-eyebrow" data-i18n="eyebrowStory">✦ Signature Offerings ✦</p>
+                <h2 class="section-title" data-i18n="titleStory">The UMA <em>Experience</em></h2>
+                <p class="section-subtitle" data-i18n="subtitleStory">Explore our core culinary offerings made fresh daily</p>
+                <div class="header-accent-line"></div>
+            </div>
+
+            <div class="story-scroll-wrapper" id="storyScrollWrapper">
+                <div class="story-scroll-track" id="storyScrollTrack">
+                    <!-- Card 1 -->
+                    <div class="story-card spotlight-card" data-cursor="EXPLORE">
+                        <div class="story-card-badge" data-i18n="card1Badge">01 • Specialty</div>
+                        <div class="story-card-icon"><i class="fas fa-pepper-hot"></i></div>
+                        <h3 data-i18n="card1Title">કુંભણીયા / ભજીયા</h3>
+                        <p data-i18n="card1Desc">Crispy, spiced Gujarati Kumbhaniya, Patti Marcha, &amp; Stuffed Chili Fry made fresh to order.</p>
+                        <span class="story-card-price" data-i18n="card1Price">Starting at ₹50</span>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="story-card spotlight-card" data-cursor="EXPLORE">
+                        <div class="story-card-badge" data-i18n="card2Badge">02 • Artisanal</div>
+                        <div class="story-card-icon"><i class="fas fa-ice-cream"></i></div>
+                        <h3 data-i18n="card2Title">Artisanal Ice Creams</h3>
+                        <p data-i18n="card2Desc">Rich, creamy house-crafted cups including Special Gotalo, Malai, Mawa Badam, and American Dryfruit.</p>
+                        <span class="story-card-price" data-i18n="card2Price">₹30 – ₹40 / cup</span>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="story-card spotlight-card" data-cursor="EXPLORE">
+                        <div class="story-card-badge" data-i18n="card3Badge">03 • On The Go</div>
+                        <div class="story-card-icon"><i class="fas fa-candy-cane"></i></div>
+                        <h3 data-i18n="card3Title">Candies &amp; Cones</h3>
+                        <p data-i18n="card3Desc">Authentic Mawa Malai, Mawa Topra, Jamun, Oreo, Raspberry sticks and crispy Chocolate Cones.</p>
+                        <span class="story-card-price" data-i18n="card3Price">₹15 – ₹35 each</span>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="story-card spotlight-card" data-cursor="EXPLORE">
+                        <div class="story-card-badge" data-i18n="card4Badge">04 • Chilled</div>
+                        <div class="story-card-icon"><i class="fas fa-glass-water"></i></div>
+                        <h3 data-i18n="card4Title">Chilled Beverages</h3>
+                        <p data-i18n="card4Desc">Cool off with authentic Gujarati Sosyo, chilled Spiced Chaas (Buttermilk), Thums Up, Sprite, &amp; Maaza.</p>
+                        <span class="story-card-price" data-i18n="card4Price">All at ₹20</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Navigation Dots -->
+            <div class="story-dots" id="storyDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Experience -->
+    <section class="section menu-section" id="menu">
+        <div class="container">
+            <div class="section-header reveal-item">
+                <p class="section-eyebrow" data-i18n="eyebrowMenu">✦ What We Serve ✦</p>
+                <h2 class="section-title" data-i18n="titleMenu">Our Signature <em>Menu</em></h2>
+                <p class="section-subtitle" data-i18n="subtitleMenu">Handcrafted authentic Gujarati snacks, rich ice creams, and refreshing beverages</p>
+                <div class="header-accent-line"></div>
+            </div>
+
+            <!-- Category Filter Tabs & Interactive Search -->
+            <div class="menu-filter-wrapper reveal-item">
+                <div class="category-tabs" id="categoryTabs">
+                    <button class="tab-btn active" data-category="all" data-i18n="tabAll">
+                        <i class="fas fa-th"></i> All Items <span class="tab-count">27</span>
+                    </button>
+                    <button class="tab-btn" data-category="bhajiya" data-i18n="tabBhajiya">
+                        <i class="fas fa-pepper-hot"></i> કુંભણીયા / ભજીયા <span class="tab-count">6</span>
+                    </button>
+                    <button class="tab-btn" data-category="ice-cream" data-i18n="tabIcecream">
+                        <i class="fas fa-ice-cream"></i> Ice Cream <span class="tab-count">16</span>
+                    </button>
+                    <button class="tab-btn" data-category="drinks" data-i18n="tabDrinks">
+                        <i class="fas fa-glass-water"></i> Drinks <span class="tab-count">5</span>
+                    </button>
+                </div>
+                
+                <div class="menu-tools-row">
+                    <div class="menu-search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="menuSearchInput" placeholder="Search menu (e.g. કુંભણીયા, મલાઈ, છાસ)..." autocomplete="off" />
+                        <button class="search-clear" id="searchClear" aria-label="Clear Search"><i class="fas fa-times"></i></button>
+                        <span class="search-shortcut-hint">Ctrl + K</span>
+                    </div>
+                </div>
+
+                <div class="search-status-bar" id="searchStatusBar">
+                    <span id="searchResultCount">Showing all 27 items</span>
+                </div>
+            </div>
+
+            <!-- Empty Search State -->
+            <div class="menu-empty-state" id="menuEmptyState" style="display: none;">
+                <i class="fas fa-utensils-slash empty-icon"></i>
+                <h3>No dishes found matching your search</h3>
+                <p>Try searching for a different dish name or clear your search to see the full menu.</p>
+                <button class="btn btn-outline" id="resetSearchBtn">Reset Search</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- 1. કુંભણીયા -->
+                <div class="menu-card spotlight-card" data-id="item-1" data-category="bhajiya" data-name="કુંભણીયા (100 gm)" data-price="₹50" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/kumbhaniya.jpg" alt="કુંભણીયા" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>કુંભણીયા (100 gm)</h4>
+                    </div>
+                    <span class="menu-price">₹50</span>
+                </div>
+
+                <!-- 2. પટ્ટી મરચા -->
+                <div class="menu-card spotlight-card" data-id="item-2" data-category="bhajiya" data-name="પટ્ટી મરચા (100 gm)" data-price="₹50" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/patti_marcha.jpg" alt="પટ્ટી મરચા" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>પટ્ટી મરચા (100 gm)</h4>
+                    </div>
+                    <span class="menu-price">₹50</span>
+                </div>
+
+                <!-- 3. ભરેલા મરચા -->
+                <div class="menu-card spotlight-card" data-id="item-3" data-category="bhajiya" data-name="ભરેલા મરચા (100 gm)" data-price="₹50" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/bharela_marcha.jpg" alt="ભરેલા મરચા" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>ભરેલા મરચા (100 gm)</h4>
+                    </div>
+                    <span class="menu-price">₹50</span>
+                </div>
+
+                <!-- 4. મેથીના ભજીયા -->
+                <div class="menu-card spotlight-card" data-id="item-4" data-category="bhajiya" data-name="મેથીના ભજીયા (100 gm)" data-price="₹50" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/methi_bhajiya.jpg" alt="મેથીના ભજીયા" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>મેથીના ભજીયા (100 gm)</h4>
+                    </div>
+                    <span class="menu-price">₹50</span>
+                </div>
+
+                <!-- 5. બટેટા પતરી -->
+                <div class="menu-card spotlight-card" data-id="item-5" data-category="bhajiya" data-name="બટેટા પતરી (100 gm)" data-price="₹50" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/bateta_patari.jpg" alt="બટેટા પતરી" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>બટેટા પતરી (100 gm)</h4>
+                    </div>
+                    <span class="menu-price">₹50</span>
+                </div>
+
+                <!-- 6. ફ્રેન્ચ ફ્રાય -->
+                <div class="menu-card spotlight-card" data-id="item-6" data-category="bhajiya" data-name="ફ્રેન્ચ ફ્રાય (100 gm)" data-price="₹50" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/french_fries.jpg" alt="ફ્રેન્ચ ફ્રાય" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>ફ્રેન્ચ ફ્રાય (100 gm)</h4>
+                    </div>
+                    <span class="menu-price">₹50</span>
+                </div>
+
+                <!-- 7. સ્પે. ગોટાળો -->
+                <div class="menu-card spotlight-card hidden" data-id="item-7" data-category="ice-cream" data-name="સ્પે. ગોટાળો cup/1 kg" data-price="₹30/₹290" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/gotalo_icecream.jpg" alt="સ્પે. ગોટાળો" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>સ્પે. ગોટાળો cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹30/₹290</span>
+                </div>
+
+                <!-- 8. સ્પે. મલાઈ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-8" data-category="ice-cream" data-name="સ્પે. મલાઈ cup/1 kg" data-price="₹30/₹290" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/malai.jpg" alt="સ્પે. મલાઈ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>સ્પે. મલાઈ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹30/₹290</span>
+                </div>
+
+                <!-- 9. માવા બદામ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-9" data-category="ice-cream" data-name="માવા બદામ cup/1 kg" data-price="₹30/₹290" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/mawa_badam.jpg" alt="માવા બદામ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>માવા બદામ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹30/₹290</span>
+                </div>
+
+                <!-- 10. પાઈનેપલ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-10" data-category="ice-cream" data-name="પાઈનેપલ cup/1 kg" data-price="₹35/₹350" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/pineapple.jpg" alt="પાઈનેપલ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>પાઈનેપલ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹35/₹350</span>
+                </div>
+
+                <!-- 11. અમેરિકન ડ્રાયફ્રુટ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-11" data-category="ice-cream" data-name="અમેરિકન ડ્રાયફ્રુટ cup/1 kg" data-price="₹35/₹350" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/american_dryfruit.jpg" alt="અમેરિકન ડ્રાયફ્રુટ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>અમેરિકન ડ્રાયફ્રુટ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹35/₹350</span>
+                </div>
+
+                <!-- 12. ઉમા સ્પેશ્યલ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-12" data-category="ice-cream" data-name="ઉમા સ્પેશ્યલ cup/1 kg" data-price="₹40/₹400" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/uma_special.jpg" alt="ઉમા સ્પેશ્યલ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>ઉમા સ્પેશ્યલ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹40/₹400</span>
+                </div>
+
+                <!-- 13. ચોકલેટ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-13" data-category="ice-cream" data-name="ચોકલેટ cup/1 kg" data-price="₹30/₹300" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/chocolate.jpg" alt="ચોકલેટ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>ચોકલેટ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹30/₹300</span>
+                </div>
+
+                <!-- 14. સીતાફળ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-14" data-category="ice-cream" data-name="સીતાફળ cup/1 kg" data-price="₹40/₹400" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/sitafal.jpg" alt="સીતાફળ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>સીતાફળ cup/1 kg</h4>
+                    </div>
+                    <span class="menu-price">₹40/₹400</span>
+                </div>
+
+                <!-- 15. માવા મલાઈ candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-15" data-category="ice-cream" data-name="માવા મલાઈ (candy)" data-price="₹25" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/mawa_malai_candy.jpg" alt="માવા મલાઈ (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>માવા મલાઈ (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹25</span>
+                </div>
+
+                <!-- 16. માવા ટોપરા candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-16" data-category="ice-cream" data-name="માવા ટોપરા (candy)" data-price="₹30" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/mawa_topra_candy.jpg" alt="માવા ટોપરા (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>માવા ટોપરા (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹30</span>
+                </div>
+
+                <!-- 17. જાંબુ candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-17" data-category="ice-cream" data-name="જાંબુ (candy)" data-price="₹35" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/jambu_candy.jpg" alt="જાંબુ (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>જાંબુ (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹35</span>
+                </div>
+
+                <!-- 18. ઓરીયો candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-18" data-category="ice-cream" data-name="ઓરીયો (candy)" data-price="₹30" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/oreo_candy.jpg" alt="ઓરીયો (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>ઓરીયો (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹30</span>
+                </div>
+
+                <!-- 19. સ્ટ્રોબેરી candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-19" data-category="ice-cream" data-name="સ્ટ્રોબેરી (candy)" data-price="₹30" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/strawberry_candy.jpg" alt="સ્ટ્રોબેરી (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>સ્ટ્રોબેરી (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹30</span>
+                </div>
+
+                <!-- 20. અમુલ ફ્રોસ્ટિક candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-20" data-category="ice-cream" data-name="અમુલ ફ્રોસ્ટિક (candy)" data-price="₹35" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/frostik.jpg" alt="અમુલ ફ્રોસ્ટિક (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>અમુલ ફ્રોસ્ટિક (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹35</span>
+                </div>
+
+                <!-- 21. રાસબરી candy -->
+                <div class="menu-card spotlight-card hidden" data-id="item-21" data-category="ice-cream" data-name="રાસબરી (candy)" data-price="₹15" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/raspberry_candy.jpg" alt="રાસબરી (candy)" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>રાસબરી (candy)</h4>
+                    </div>
+                    <span class="menu-price">₹15</span>
+                </div>
+
+                <!-- 22. ચોકલેટ કોન -->
+                <div class="menu-card spotlight-card hidden" data-id="item-22" data-category="ice-cream" data-name="ચોકલેટ કોન" data-price="₹20" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/chocolate_cone.jpg" alt="ચોકલેટ કોન" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>ચોકલેટ કોન</h4>
+                    </div>
+                    <span class="menu-price">₹20</span>
+                </div>
+
+                <!-- 23. થમ્સઅપ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-23" data-category="drinks" data-name="થમ્સઅપ" data-price="₹20" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/thumsup.jpg" alt="થમ્સઅપ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>થમ્સઅપ</h4>
+                    </div>
+                    <span class="menu-price">₹20</span>
+                </div>
+
+                <!-- 24. સ્પ્રાઈટ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-24" data-category="drinks" data-name="સ્પ્રાઈટ" data-price="₹20" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/sprite.jpg" alt="સ્પ્રાઈટ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>સ્પ્રાઈટ</h4>
+                    </div>
+                    <span class="menu-price">₹20</span>
+                </div>
+
+                <!-- 25. માઝા -->
+                <div class="menu-card spotlight-card hidden" data-id="item-25" data-category="drinks" data-name="માઝા" data-price="₹20" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/maaza.jpg" alt="માઝા" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>માઝા</h4>
+                    </div>
+                    <span class="menu-price">₹20</span>
+                </div>
+
+                <!-- 26. સોસીયો -->
+                <div class="menu-card spotlight-card hidden" data-id="item-26" data-category="drinks" data-name="સોસીયો" data-price="₹20" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/sosyo.jpg" alt="સોસીયો" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>સોસીયો</h4>
+                    </div>
+                    <span class="menu-price">₹20</span>
+                </div>
+
+                <!-- 27. છાસ -->
+                <div class="menu-card spotlight-card hidden" data-id="item-27" data-category="drinks" data-name="છાસ" data-price="₹20" data-cursor="VIEW">
+                    <div class="menu-card-thumb"><img src="assets/menu/masala_chaas.jpg" alt="છાસ" class="menu-card-img" width="70" height="70" loading="lazy" decoding="async"></div>
+                    <div class="menu-card-info">
+                        <h4>છાસ</h4>
+                    </div>
+                    <span class="menu-price">₹20</span>
+                </div>
+            </div>
+
+            <!-- Menu Actions: View More, View Full Menu, Download Menu PDF -->
+            <div class="menu-actions reveal-item">
+                <button class="btn btn-outline magnetic-btn" id="viewMoreBtn" data-cursor="MORE" data-i18n="btnViewMore">
+                    <i class="fas fa-chevron-down"></i> View More Items
+                </button>
+                <button class="btn btn-secondary magnetic-btn" id="viewFullMenu" data-cursor="MENU" data-i18n="btnFullMenu">
+                    <i class="fas fa-book-open"></i> Complete Menu
+                </button>
+                <button class="btn btn-primary magnetic-btn" id="downloadMenu" data-cursor="DOWNLOAD" data-i18n="btnDownloadPdf">
+                    <i class="fas fa-download"></i> Download Menu PDF
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Your Visit Section -->
+    <section class="section plan-visit-section" id="plan-visit">
+        <div class="container">
+            <div class="section-header reveal-item">
+                <p class="section-eyebrow" data-i18n="eyebrowVisit">✦ Welcome to Babra ✦</p>
+                <h2 class="section-title" data-i18n="titleVisit">Plan Your <em>Visit</em></h2>
+                <p class="section-subtitle" data-i18n="subtitleVisit">Everything you need for an authentic culinary experience</p>
+                <div class="header-accent-line"></div>
+            </div>
+
+            <div class="plan-visit-grid">
+                <!-- Card 1: Hours & Atmosphere -->
+                <div class="visit-card spotlight-card reveal-item">
+                    <div class="visit-icon"><i class="fas fa-clock"></i></div>
+                    <h3 data-i18n="visitCard1Title">Operating Hours</h3>
+                    <p class="visit-lead" data-i18n="visitCard1Lead">Freshly prepared evening snacks and desserts every day.</p>
+                    <div class="visit-detail-badge" id="visitDetailBadge">
+                        <span class="live-status-dot" id="visitStatusDot"></span>
+                        <strong id="visitHoursStatus">All Days: 04:00 PM – 11:45 PM</strong>
+                    </div>
+                    <ul class="visit-list">
+                        <li data-i18n="visitList1"><i class="fas fa-check"></i> Fresh batch fried continuously</li>
+                        <li data-i18n="visitList2"><i class="fas fa-check"></i> Chilled handcrafted ice creams</li>
+                        <li data-i18n="visitList3"><i class="fas fa-check"></i> Takeaway &amp; dine-in available</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Distance Experience -->
+                <div class="visit-card spotlight-card reveal-item">
+                    <div class="visit-icon"><i class="fas fa-location-crosshairs"></i></div>
+                    <h3 data-i18n="visitCard2Title">Live Distance</h3>
+                    <p class="visit-lead" data-i18n="visitCard2Lead">Calculate your exact driving distance to UMA Kumbhaniya.</p>
+                    <div class="distance-calculator-box">
+                        <button class="btn btn-outline btn-full magnetic-btn" id="calcDistanceBtn" data-cursor="LOCATE" data-i18n="btnFindDistance">
+                            <i class="fas fa-map-pin"></i> Find My Distance
+                        </button>
+                        <div class="distance-result" id="distanceResult" style="display: none;">
+                            <span class="distance-value" id="distanceValue">Calculating...</span>
+                            <span class="distance-sub">to Babra, Gujarat</span>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/place/UMA+KUMBHANIYA+%26+ICE+CREAM/@21.8421255,71.2960936,17z/data=!3m1!4b1!4m6!3m5!1s0x39588de116bab375:0xb6ddb731a70b093f!8m2!3d21.8421255!4d71.2986685!16s%2Fg%2F11sk5rn5jy?entry=ttu" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full magnetic-btn" style="margin-top: 16px;" data-i18n="btnOpenNav">
+                        <i class="fas fa-diamond-turn-right"></i> Open Navigation
+                    </a>
+                </div>
+
+                <!-- Card 3: Authentic Hospitality -->
+                <div class="visit-card spotlight-card reveal-item">
+                    <div class="visit-icon"><i class="fas fa-heart"></i></div>
+                    <h3 data-i18n="visitCard3Title">Authentic Hospitality</h3>
+                    <p class="visit-lead" data-i18n="visitCard3Lead">Experience true Saurashtra warmth and freshly prepared traditional recipes.</p>
+                    <div class="visit-whatsapp-box">
+                        <p><i class="fas fa-phone-alt"></i> <strong>+91 90991 28700</strong></p>
+                        <span>Serving hot and fresh food daily in Babra</span>
+                    </div>
+                    <a href="tel:+919099128700" class="btn btn-primary btn-full magnetic-btn" data-cursor="CALL" data-i18n="btnCallUs">
+                        <i class="fas fa-phone-alt"></i> Call +91 90991 28700
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact & Location Section (Preserved Form & Details) -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal-item">
+                <p class="section-eyebrow" data-i18n="eyebrowContact">✦ Connect With Us ✦</p>
+                <h2 class="section-title" data-i18n="titleContact">Visit Us in <em>Babra</em></h2>
+                <p class="section-subtitle" data-i18n="subtitleContact">We look forward to serving you with warmth and tradition</p>
+                <div class="header-accent-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info Column -->
+                <div class="contact-info-col reveal-item">
+                    <div class="contact-info-card spotlight-card">
+                        <div class="contact-info-header">
+                            <h3>UMA Kumbhaniya</h3>
+                            <span class="contact-status-pill" id="contactStatusPill">
+                                <i class="fas fa-circle" style="color: #4CAF50;"></i> Open Now (Till 11:45 PM)
+                            </span>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h5 data-i18n="contactAddrTitle">Location &amp; Address</h5>
+                                <p>Babra, Gujarat, India</p>
+                                <a href="https://www.google.com/maps/place/UMA+KUMBHANIYA+%26+ICE+CREAM/@21.8421255,71.2960936,17z/data=!3m1!4b1!4m6!3m5!1s0x39588de116bab375:0xb6ddb731a70b093f!8m2!3d21.8421255!4d71.2986685!16s%2Fg%2F11sk5rn5jy?entry=ttu" target="_blank" rel="noopener noreferrer" class="contact-link" data-i18n="btnOpenNav">
+                                    <i class="fas fa-diamond-turn-right"></i> Open Google Maps Directions
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h5 data-i18n="contactPhoneTitle">Phone Number</h5>
+                                <p><a href="tel:+919099128700">+91 90991 28700</a></p>
+                                <span class="contact-note">Call for inquiries or takeaways</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h5 data-i18n="contactHoursTitle">Operating Hours</h5>
+                                <p><strong>All Days:</strong> 04:00 PM – 11:45 PM</p>
+                                <span class="contact-note">Fresh batches prepared in the evening</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-cta-btns">
+                            <a href="tel:+919099128700" class="btn btn-primary btn-full magnetic-btn" data-cursor="CALL" data-i18n="btnCallUs">
+                                <i class="fas fa-phone-alt"></i> Call +91 90991 28700
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="contact-form-col reveal-item">
+                    <div class="contact-form-box spotlight-card">
+                        <h3 data-i18n="contactFormTitle">Send Us a Message</h3>
+                        <p class="form-subtext" data-i18n="contactFormSub">Have a question or feedback? Drop us a note below.</p>
+                        
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name" data-i18n="lblFormName">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+                                <span class="error-msg" id="nameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" data-i18n="lblFormPhone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" required />
+                                <span class="error-msg" id="phoneError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" data-i18n="lblFormMsg">Your Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help..." required></textarea>
+                                <span class="error-msg" id="messageError"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full magnetic-btn" id="sendMsgBtn" data-cursor="SEND" data-i18n="btnSendMsg">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+
+                            <div class="form-success" id="formSuccess">
+                                <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Review Action Banner -->
+            <div class="review-cta-banner spotlight-card reveal-item">
+                <div class="review-cta-content">
+                    <div class="review-cta-left">
+                        <div class="review-cta-icon"><i class="fab fa-google"></i></div>
+                        <div>
+                            <h4 data-i18n="reviewBannerTitle">Loved Our Gujarati Food?</h4>
+                            <p data-i18n="reviewBannerText">Share your experience and leave a 5-star review on our official Google Maps page!</p>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/place//@21.8421255,71.2986685,17z/data=!3m1!4b1!4m3!3m2!1s0x39588de116bab375:0xb6ddb731a70b093f!12e1?entry=ttu" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic-btn" data-cursor="REVIEW" data-i18n="btnWriteReview">
+                        <i class="fab fa-google"></i> Write a Google Review
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Map Embed (Interactive) -->
+            <div class="map-embed-wrapper reveal-item">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.8182236319807!2d71.2960936!3d21.8421255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39588de116bab375%3A0xb6ddb731a70b093f!2sUMA%20KUMBHANIYA%20%26%20ICE%20CREAM!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="380" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="UMA Kumbhaniya Location Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Gallery Section (Moments & Tradition) -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header reveal-item">
+                <p class="section-eyebrow" data-i18n="eyebrowGallery">✦ Visual Feast ✦</p>
+                <h2 class="section-title" data-i18n="titleGallery">Moments &amp; <em>Tradition</em></h2>
+                <p class="section-subtitle" data-i18n="subtitleGallery">A glimpse into the craft, ingredients, and warmth at UMA Kumbhaniya</p>
+                <div class="header-accent-line"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card spotlight-card reveal-item" data-cursor="ENLARGE" data-img="assets/menu/kumbhaniya.jpg" data-caption="Golden Kumbhaniya fried to crispy perfection">
+                    <img src="assets/menu/kumbhaniya.jpg" alt="Freshly Fried Kumbhaniya" class="gallery-img" loading="lazy" decoding="async" />
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Freshly Fried Kumbhaniya</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card spotlight-card reveal-item" data-cursor="ENLARGE" data-img="assets/menu/bharela_marcha.jpg" data-caption="Stuffed Bharela Marcha Fry">
+                    <img src="assets/menu/bharela_marcha.jpg" alt="Bharela Marcha" class="gallery-img" loading="lazy" decoding="async" />
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Bharela Marcha Fry</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card spotlight-card reveal-item" data-cursor="ENLARGE" data-img="assets/menu/methi_bhajiya.jpg" data-caption="Fragrant Fresh Methi Bhajiya">
+                    <img src="assets/menu/methi_bhajiya.jpg" alt="Methi Bhajiya" class="gallery-img" loading="lazy" decoding="async" />
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Fresh Methi Bhajiya</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card spotlight-card reveal-item" data-cursor="ENLARGE" data-img="assets/menu/patti_marcha.jpg" data-caption="Crispy Patti Marcha Bhajiya">
+                    <img src="assets/menu/patti_marcha.jpg" alt="Patti Marcha" class="gallery-img" loading="lazy" decoding="async" />
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Patti Marcha Bhajiya</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card spotlight-card reveal-item" data-cursor="ENLARGE" data-img="assets/menu/bateta_patari.jpg" data-caption="Golden Bateta Patri Wafers">
+                    <img src="assets/menu/bateta_patari.jpg" alt="Bateta Patri" class="gallery-img" loading="lazy" decoding="async" />
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Crispy Bateta Patri</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card spotlight-card reveal-item" data-cursor="ENLARGE" data-img="assets/menu/french_fries.jpg" data-caption="Golden Seasoned French Fries">
+                    <img src="assets/menu/french_fries.jpg" alt="French Fries" class="gallery-img" loading="lazy" decoding="async" />
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Golden French Fries</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo" aria-label="UMA Kumbhaniya Home" data-cursor="UMA">
+                    <img src="favicon.png" alt="UMA Kumbhaniya Logo" class="footer-logo-img" loading="lazy" />
+                    <div class="footer-logo-text">
+                        <span class="footer-logo-title">UMA</span>
+                        <span class="footer-logo-sub">Kumbhaniya</span>
+                    </div>
+                </a>
+                <p data-i18n="footerText">Authentic Gujarati taste, handcrafted Kumbhaniya &amp; Bhajiya, pure artisanal ice creams, and chilled refreshments in Babra.</p>
+                <div class="footer-status-pill">
+                    <span class="live-status-dot"></span> All Days: 4:00 PM – 11:45 PM
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/share/1H9vQ5yid8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/uma_kumbhaniya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/919099128700" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4 data-i18n="footerNavTitle">Quick Navigation</h4>
+                <ul>
+                    <li><a href="#story-section" data-i18n="navOfferings">Offerings</a></li>
+                    <li><a href="#menu" data-i18n="navMenu">Signature Menu</a></li>
+                    <li><a href="#plan-visit" data-i18n="navVisit">Plan Your Visit</a></li>
+                    <li><a href="#contact" data-i18n="navContact">Contact &amp; Location</a></li>
+                    <li><a href="#gallery" data-i18n="navGallery">Gallery</a></li>
+                    <li><a href="https://www.google.com/maps/place//@21.8421255,71.2986685,17z/data=!3m1!4b1!4m3!3m2!1s0x39588de116bab375:0xb6ddb731a70b093f!12e1?entry=ttu" target="_blank" rel="noopener noreferrer"><i class="fab fa-google" style="color:var(--gold-primary); margin-right:4px;"></i> Google Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4 data-i18n="footerContactTitle">Contact Details</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Babra, Gujarat, India</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919099128700">+91 90991 28700</a></p>
+                <p><i class="fas fa-clock"></i> All Days: 4:00 PM – 11:45 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-i18n="footerCopyright">© 2025 UMA Kumbhaniya. All Rights Reserved. | Crafted with <i class="fas fa-heart" style="color: #C9A227;"></i> in Babra</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Action Strip -->
+    <div class="mobile-sticky-bar">
+        <a href="tel:+919099128700" class="btn btn-sticky-call">
+            <i class="fas fa-phone-alt"></i> Call
+        </a>
+        <a href="#menu" class="btn btn-sticky-menu">
+            <i class="fas fa-utensils"></i> Menu
+        </a>
+        <button class="btn btn-sticky-concierge" id="stickyConciergeBtn">
+            <i class="fas fa-sparkles"></i> TasteAI
+        </button>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" data-cursor="TOP">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ==========================================================================
+         MODALS & INTERACTIVE WIDGETS
+         ========================================================================== -->
+
+    <!-- 1. TasteAI Floating Button & Widget -->
+    <button class="concierge-floating-toggle" id="conciergeToggleBtn" aria-label="Open TasteAI Assistant" data-cursor="TASTEAI">
+        <div class="concierge-pulse-ring"></div>
+        <i class="fas fa-sparkles"></i>
+        <span class="concierge-badge-label">TasteAI</span>
+    </button>
+
+    <div class="concierge-drawer" id="conciergeDrawer" role="dialog" aria-modal="true" aria-label="UMA TasteAI Assistant">
+        <div class="concierge-header">
+            <div class="concierge-title-wrap">
+                <div class="concierge-avatar"><i class="fas fa-robot"></i></div>
+                <div class="concierge-title-info">
+                    <h4>TasteAI</h4>
+                    <span class="concierge-sub"><span class="concierge-online-dot"></span> Live Assistant</span>
+                </div>
+            </div>
+            <div class="concierge-header-actions">
+                <button class="concierge-mode-toggle" id="conciergeModeToggle" title="Click to switch mode" aria-label="Switch AI Mode">
+                    <i class="fas fa-sparkles" id="conciergeModeIcon"></i>
+                    <span id="conciergeModeText">Smart (5 left)</span>
+                </button>
+                <button class="concierge-action-btn" id="conciergeUnlockBtn" title="Unlock Unlimited VIP" aria-label="Unlock Unlimited AI"><i class="fas fa-key"></i></button>
+                <button class="concierge-action-btn" id="conciergeFullscreenBtn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen"><i class="fas fa-expand" id="conciergeFullscreenIcon"></i></button>
+                <button class="concierge-action-btn" id="conciergeClearBtn" title="Clear Chat" aria-label="Clear chat"><i class="fas fa-trash-can"></i></button>
+                <button class="concierge-close" id="conciergeCloseBtn" aria-label="Close TasteAI"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="concierge-unlock-panel" id="conciergeUnlockPanel" style="display: none;">
+            <div class="unlock-panel-inner">
+                <div class="unlock-header">
+                    <span><i class="fas fa-crown" style="color:var(--gold-primary);"></i> Unlock Unlimited Smart AI</span>
+                    <button type="button" class="unlock-close-btn" id="unlockPanelCloseBtn" aria-label="Close unlock panel"><i class="fas fa-times"></i></button>
+                </div>
+                <p class="unlock-desc">Enter VIP password to remove limits and unlock unlimited Smart AI questions on this device.</p>
+                <form id="unlockPasscodeForm" class="unlock-form">
+                    <input type="password" id="unlockPasscodeInput" placeholder="Enter VIP password..." autocomplete="off" />
+                    <button type="submit" class="btn-unlock-submit">Unlock</button>
+                </form>
+                <span class="unlock-error" id="unlockErrorMsg" style="display:none;"></span>
+            </div>
+        </div>
+        
+        <div class="concierge-body" id="conciergeChatBody">
+            <div class="chat-bubble bot-bubble">
+                <p>🙏 Welcome to <strong>UMA Kumbhaniya</strong>! I am <strong>TasteAI</strong>, your smart food assistant grounded strictly in our official menu and restaurant data. Ask me anything about our Gujarati snacks, ice creams, drinks, prices, or operating hours.</p>
+            </div>
+            
+            <div class="concierge-quick-prompts" id="conciergeQuickPrompts">
+                <button class="prompt-chip" data-query="What snacks do you serve?">🌶 Handcrafted snacks</button>
+                <button class="prompt-chip" data-query="What ice creams are available?">🍦 Ice cream flavors</button>
+                <button class="prompt-chip" data-query="What dishes are under ₹50?">💰 Dishes under ₹50</button>
+                <button class="prompt-chip" data-query="Are you open now?">🕐 Opening hours</button>
+                <button class="prompt-chip" data-query="Where is the restaurant located?">📍 Location &amp; Directions</button>
+                <button class="prompt-chip" data-query="What is your phone number?">📞 Contact number</button>
+            </div>
+        </div>
+
+        <div class="concierge-typing-indicator" id="conciergeTypingIndicator" style="display:none;">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <span class="typing-label">Retrieving restaurant data...</span>
+        </div>
+
+        <div class="concierge-footer">
+            <form id="conciergeForm" class="concierge-input-form">
+                <input type="text" id="conciergeInput" placeholder="Ask about menu, prices, hours..." autocomplete="off" />
+                <button type="submit" class="concierge-send-btn" aria-label="Send query"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Dish Item Detail Modal -->
+    <div class="modal-overlay" id="dishDetailModal" role="dialog" aria-modal="true" aria-label="Dish Details">
+        <div class="modal-box dish-detail-box">
+            <div class="modal-header">
+                <h3 id="dishDetailTitle">Dish Details</h3>
+                <button class="modal-close" id="closeDishDetailModal" aria-label="Close Details"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body dish-detail-body">
+                <div class="dish-detail-card">
+                    <div class="dish-detail-icon" id="dishDetailIcon"><i class="fas fa-utensils"></i></div>
+                    <div class="dish-detail-meta">
+                        <span class="dish-detail-tag" id="dishDetailCategory">Category</span>
+                        <h2 id="dishDetailHeading">Dish Name</h2>
+                        <div class="dish-detail-price-row">
+                            <span class="dish-detail-price" id="dishDetailPrice">₹00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dish-detail-actions">
+                    <a href="tel:+919099128700" class="btn btn-primary btn-full magnetic-btn">
+                        <i class="fas fa-phone-alt"></i> Call +91 90991 28700
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Full Menu Modal Overlay -->
+    <div class="modal-overlay" id="menuModal" role="dialog" aria-modal="true" aria-label="Full Menu">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fas fa-book-open"></i> UMA Kumbhaniya – Complete Menu</h3>
+                <button class="modal-close" id="closeModal" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalMenuContent"></div>
+        </div>
+    </div>
+
+    <!-- 4. Share Website Modal Overlay -->
+    <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-label="Share Website">
+        <div class="modal-box share-modal-box">
+            <div class="modal-header">
+                <h3 data-i18n="shareTitle"><i class="fas fa-share-nodes" style="color: var(--gold-primary);"></i> Share UMA Kumbhaniya</h3>
+                <button class="modal-close" id="shareModalClose" aria-label="Close Share Modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="share-modal-desc" data-i18n="shareSub">Spread the word about authentic Gujarati Kumbhaniya &amp; Ice Cream in Babra!</p>
+                <div class="share-options-grid">
+                    <a href="#" class="share-option-btn share-whatsapp" id="shareWhatsapp" target="_blank" rel="noopener noreferrer">
+                        <div class="share-icon"><i class="fab fa-whatsapp"></i></div>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" class="share-option-btn share-facebook" id="shareFacebook" target="_blank" rel="noopener noreferrer">
+                        <div class="share-icon"><i class="fab fa-facebook-f"></i></div>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="share-option-btn share-twitter" id="shareTwitter" target="_blank" rel="noopener noreferrer">
+                        <div class="share-icon"><i class="fab fa-x-twitter"></i></div>
+                        <span>Twitter / X</span>
+                    </a>
+                    <button class="share-option-btn share-copy" id="shareCopyLink">
+                        <div class="share-icon"><i class="fas fa-link"></i></div>
+                        <span id="shareCopyText" data-i18n="copyLinkBtn">Copy Link</span>
+                    </button>
+                </div>
+                <div class="share-url-box">
+                    <input type="text" id="shareUrlInput" readonly value="" />
+                    <button class="btn btn-primary" id="shareCopyInputBtn" aria-label="Copy URL"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="lightbox-overlay" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Image View">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox"><i class="fas fa-times"></i></button>
+            <img src="" alt="Expanded View" id="lightboxImg" class="lightbox-img" loading="lazy" />
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
