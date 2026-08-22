@@ -1405,13 +1405,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('/api/ai/chat', {
+      // Direct call to Netlify Serverless Function on netlify.app
+      const apiEndpoint = window.location.hostname.includes('netlify')
+        ? '/.netlify/functions/chat'
+        : '/api/ai/chat';
+
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           message: q, 
           history: chatHistory, 
-          mode: effectiveMode,
+          mode: 'smart',
           passcode: isVip ? VIP_PASSCODE : ''
         })
       });
@@ -1425,7 +1430,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
     } catch (err) {
-      // Ignore network/404 fetch error on static hosting platforms
+      console.warn('AI Endpoint fallback to local engine:', err);
     }
 
     // Instant local grounded fallback for static Netlify host
