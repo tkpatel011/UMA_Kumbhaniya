@@ -1,6 +1,6 @@
 /**
  * Netlify Serverless Function for UMA TasteAI Chat
- * Self-contained for 100% reliability on Netlify Functions (No 500 errors)
+ * Supports Groq API Key (Llama-3 70B) & OpenAI API Key (GPT-4o-mini)
  */
 
 const RESTAURANT_DATA = {
@@ -49,11 +49,70 @@ exports.handler = async (event, context) => {
 
   try {
     const body = JSON.parse(event.body || '{}');
-    const q = (body.message || '').trim().toLowerCase();
+    const userMessage = (body.message || '').trim();
+    const q = userMessage.toLowerCase();
+    
+    // Check all possible environment variable names
+    const apiKey = process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY || process.env.AI_KEY || '';
 
+    // 1. Try Groq API or OpenAI API call if key is present
+    if (apiKey) {
+      const isGroq = apiKey.startsWith('gsk_') || Boolean(process.env.GROQ_API_KEY);
+      const endpoint = isGroq 
+        ? 'https://api.groq.com/openai/v1/chat/completions' 
+        : 'https://api.openai.com/v1/chat/completions';
+      const model = isGroq 
+        ? 'llama-3.3-70b-versatile' 
+        : (process.env.OPENAI_MODEL || 'gpt-4o-mini');
+
+      try {
+        const aiRes = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            model: model,
+            messages: [
+              {
+                role: 'system',
+                content: `You are TasteAI, the official smart restaurant concierge for UMA Kumbhaniya & Ice Cream in Babra, Gujarat. Ground your answers strictly in this menu and restaurant information: ${JSON.stringify(RESTAURANT_DATA)}. Keep answers warm, concise, and helpful.`
+              },
+              { role: 'user', content: userMessage }
+            ],
+            max_tokens: 250,
+            temperature: 0.7
+          })
+        });
+
+        if (aiRes.ok) {
+          const aiData = await aiRes.json();
+          const aiAnswer = aiData.choices?.[0]?.message?.content;
+          if (aiAnswer) {
+            return {
+              statusCode: 200,
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+              },
+              body: JSON.stringify({
+                answer: aiAnswer,
+                sourceType: 'smart_ai'
+              })
+            };
+          }
+        } else {
+          const errText = await aiRes.text();
+          console.error('AI API Error Response:', aiRes.status, errText);
+        }
+      } catch (aiErr) {
+        console.error('AI Fetch Exception:', aiErr);
+      }
+    }
+
+    // 2. Fallback to Grounded Database Response
     let answer = '';
-    let sourceType = 'grounded';
-
     if (q.includes('kumbhaniya') || q.includes('કુંભણીયા') || q.includes('bhajiya') || q.includes('ભજીયા')) {
       answer = 'કુંભણીયા / ભજીયા (100 gm) is ₹50. Made fresh to order continuously!';
     } else if (q.includes('patti') || q.includes('પટ્ટી')) {
@@ -89,7 +148,7 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify({
         answer,
-        sourceType
+        sourceType: 'grounded'
       })
     };
   } catch (err) {
