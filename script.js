@@ -1416,22 +1416,25 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       });
 
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      
-      showTyping(false);
-      const answer = data.answer || "I couldn't find that information on the restaurant's website.";
-      appendChatMessage(answer, false, data.sourceType);
-      chatHistory.push({ role: 'bot', content: answer });
-    } catch (err) {
-      // Local fallback on network disconnect or standalone static serving
-      setTimeout(() => {
+      if (response.ok) {
+        const data = await response.json();
         showTyping(false);
-        const fallback = executeLocalFallback(q);
-        appendChatMessage(fallback.answer, false, fallback.sourceType);
-        chatHistory.push({ role: 'bot', content: fallback.answer });
-      }, 350);
+        const answer = data.answer || "I couldn't find that information on the restaurant's website.";
+        appendChatMessage(answer, false, data.sourceType);
+        chatHistory.push({ role: 'bot', content: answer });
+        return;
+      }
+    } catch (err) {
+      // Ignore network/404 fetch error on static hosting platforms
     }
+
+    // Instant local grounded fallback for static Netlify host
+    setTimeout(() => {
+      showTyping(false);
+      const fallback = executeLocalFallback(q);
+      appendChatMessage(fallback.answer, false, fallback.sourceType);
+      chatHistory.push({ role: 'bot', content: fallback.answer });
+    }, 350);
   }
 
   if (conciergeForm) {
