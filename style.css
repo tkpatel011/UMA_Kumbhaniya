@@ -3659,6 +3659,15 @@ body.cursor-item-hover .cursor-ring,
 }
 
 @media (max-width: 768px) {
+  .nav-right .lang-toggle-btn,
+  .nav-right .btn-share-nav {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+    margin-left: auto;
+  }
+
   .mobile-sticky-bar {
     display: flex;
     position: fixed;
